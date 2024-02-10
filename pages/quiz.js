@@ -11,32 +11,18 @@ import SelectionMenu from "../components/SelectionMenu";
 import SoundButton from "../components/SoundButton";
 import CharacterBox from "../components/CharacterBox";
 
-const Quiz = () => {
-  const [randomIPAs, setRandomIPAs] = useState(
-    Array.from({ length: 4 }, () => getRandomIPA())
-  );
-  const [selectedOption, setSelectedOption] = useState(null); // Add selectedOption state variable
+export async function getServerSideProps() {
+  const randomIPAs = Array.from({ length: 4 }, () => getRandomIPA());
+  return {
+    props: {
+      randomIPAs,
+    },
+  };
+}
 
-  // // useEffect is necessary to block Hydration error
-  // useEffect(() => {
-  //   const getRandomIPA = () => {
-  //     // Get the keys (symbol codes) of the IPA object
-  //     const symbolCodes = Object.keys(IPA);
-
-  //     // Generate a random index within the range of symbol codes
-  //     const randomIndex = Math.floor(Math.random() * symbolCodes.length);
-
-  //     // Use the random index to pick a random symbol code
-  //     const randomSymbolCode = symbolCodes[randomIndex];
-
-  //     // Retrieve the corresponding symbol information using the random symbol code
-  //     const randomSymbolInfo = IPA[randomSymbolCode];
-
-  //     // Return the random symbol information
-  //     return randomSymbolInfo;
-  //   };
-  //   setRandomIPAs(randomIPAs);
-  // }, [randomIPAs]);
+const Quiz = ({ randomIPAs }) => {
+  // const [randomIPAs, setRandomIPAs] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const handleSubmit = (submission) => {
     // Handle the submission here
@@ -48,7 +34,7 @@ const Quiz = () => {
   const [option1, option2, option3, option4] = randomIPAs;
 
   const handleOptionChange = (option) => {
-    setSelectedOption(option); // Update selectedOption when the option is changed
+    setSelectedOption(option); // update selectedOption when the option is changed
   };
 
   return (
