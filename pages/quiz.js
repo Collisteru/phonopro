@@ -1,37 +1,75 @@
-// pages/quiz.js
+// pages/quizzing.js
 
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import Button from "@components/Button";
-import { useState } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Button from "../components/Button";
+import { useState, useEffect } from "react";
+const { IPA } = require("../constants.js");
 import getRandomIPA from "@components/RandomIPA";
 
-import SelectionMenu from "@components/SelectionMenu";
-import SoundButton from "@components/SoundButton";
-import CharacterBox from "@components/CharacterBox";
+import SelectionMenu from "../components/SelectionMenu";
+import SoundButton from "../components/SoundButton";
+import CharacterBox from "../components/CharacterBox";
 
-// server side fetching
-export async function getServerSideProps() {
-  const randomIPAs = Array.from({ length: 4 }, () => getRandomIPA());
-  return {
-    props: {
-      randomIPAs,
-    },
-  };
-}
+const Quiz = () => {
+  const [randomIPAs, setRandomIPAs] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null); // Add selectedOption state variable
+  const [correctIndex, setCorrectIndex] = useState(null); // Declare correctIndex state variable
 
-const Quiz = ({ randomIPAs }) => {
-  // const [randomIPAs, setRandomIPAs] = useState([]);
-  const [selectedOption, setSelectedOption] = useState(null);
+  // useEffect is necessary to block Hydration error
+  //
+  useEffect(() => {
+    const getRandomIPA = () => {
+      // Get the keys (symbol codes) of the IPA object
+      const symbolCodes = Object.keys(IPA);
+
+      // Generate a list of random indices within the range of symbol codes
+      const randomIndices = Array.from({ length: 4 }, () =>
+        Math.floor(Math.random() * symbolCodes.length)
+      );
+
+      // Assign selectedIndex to a random numebr between 0 and 3 inclusive
+      const selectedIndex = Math.floor(Math.random() * 4);
+
+      // Retrieve the corresponding symbol information using the random symbol code
+      const randomSymbolCode = [];
+      const randomSymbolInfo = [];
+      for (let i = 0; i < 4; i++) {
+        randomSymbolCode.push(symbolCodes[randomIndices[i]]);
+        randomSymbolInfo.push(IPA[randomSymbolCode[i]]);
+      }
+
+      // Return the random symbol information
+      return { RandomIPAs: randomSymbolInfo, correctIndex: selectedIndex }; // Return an object with RandomIPAs and correctIndex
+    };
+
+    const { RandomIPAs, correctIndex } = getRandomIPA();
+
+    console.log("CorrectIndex: ", correctIndex);
+    setRandomIPAs(RandomIPAs);
+    setCorrectIndex(correctIndex); // Update correctIndex state variable
+  }, []);
+
+  console.log("RandomIPAs: ", randomIPAs);
 
   const handleSubmit = () => {
     // Handle the submission here
     console.log("Submission: ", selectedOption);
   };
 
+<<<<<<< HEAD
   const answer = randomIPAs[Math.floor(Math.random() * 4)];
+=======
+  // Conditional rendering: render the component only when randomIPAs has been populated
+  if (randomIPAs.length === 0) {
+    // If randomIPAs is empty, return null or a loading indicator
+    return null; // Or return a loading indicator JSX here
+  }
+>>>>>>> sean
 
-  const [option1, option2, option3, option4] = randomIPAs;
+  const character = randomIPAs[correctIndex];
+
+  const [sound1, sound2, sound3, sound4] = randomIPAs;
 
   const handleOptionChange = (option) => {
     setSelectedOption(option); // update selectedOption when the option is changed
@@ -46,8 +84,6 @@ const Quiz = ({ randomIPAs }) => {
           flexDirection: "column",
           alignItems: "center",
           marginTop: "8vh",
-          overflow: "auto",
-          paddingBottom: "10vh",
         }}
       >
         <div>
@@ -57,12 +93,12 @@ const Quiz = ({ randomIPAs }) => {
         <CharacterBox character={answer} />
         <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <SoundButton text={1} audioPath={option1.audiopath} />
-          <SoundButton text={2} audioPath={option2.audiopath} />
+          <SoundButton text={1} audioPath={sound1.audiopath} />
+          <SoundButton text={2} audioPath={sound2.audiopath} />
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <SoundButton text={3} audioPath={option3.audiopath} />
-          <SoundButton text={4} audioPath={option4.audiopath} />
+          <SoundButton text={3} audioPath={sound3.audiopath} />
+          <SoundButton text={4} audioPath={sound4.audiopath} />
         </div>
         <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
