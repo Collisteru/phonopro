@@ -3,7 +3,7 @@ import React from "react";
 const SelectionMenu = ({ options, onChange }) => {
   const handleChange = (event) => {
     const selectedOption = event.target.value;
-    onChange(selectedOption);
+    onChange(selectedOption); // pass the selected option to the parent component
   };
   return (
     <select
@@ -16,6 +16,10 @@ const SelectionMenu = ({ options, onChange }) => {
       }}
       onChange={handleChange}
     >
+      <option disabled selected value>
+        {" "}
+        -- select an option --{" "}
+      </option>
       {options.map((option) => (
         <option key={option} value={option}>
           {option}
