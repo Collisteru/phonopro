@@ -33,7 +33,7 @@ const TitlePage = () => {
         <Link href="/learning">
           <Button>Learning Mode</Button>
         </Link>
-        <Link href="/quizzing">
+        <Link href="/startquiz">
           <Button>Quizzing Mode</Button>
         </Link>
       </div>

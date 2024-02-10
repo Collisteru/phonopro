@@ -6,10 +6,6 @@ import Button from "@components/Button";
 
 import Link from "next/link";
 
-const [correctCount, setCorrectCount] = useState(0);
-const [quizIndex, setQuizIndex] = useState(0);
-const totalQuizzes = 5; // Change this to the total number of quizzes
-
 const StartQuiz = () => {
   return (
     <div>
@@ -26,7 +22,7 @@ const StartQuiz = () => {
         <div style={{ textAlign: "center" }}>
           <h1>Quizzing Mode</h1>
           <div>Welcome to the magnificent IPA quiz!</div>
-          <Link href="/quiz">
+          <Link href="/quizzing">
             <Button> Start Quiz </Button>
           </Link>
         </div>

@@ -5,13 +5,12 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import { useState, useEffect } from "react";
 const { IPA } = require("../constants.js");
-import getRandomIPA from "@components/RandomIPA";
 
 import SelectionMenu from "../components/SelectionMenu";
 import SoundButton from "../components/SoundButton";
 import CharacterBox from "../components/CharacterBox";
 
-const Quiz = (correct_count, quiz_index) => {
+const QuizPage = (params) => {
   const [randomIPAs, setRandomIPAs] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null); // Add selectedOption state variable
   const [correctIndex, setCorrectIndex] = useState(null); // Declare correctIndex state variable
@@ -49,11 +48,6 @@ const Quiz = (correct_count, quiz_index) => {
     setCorrectIndex(correctIndex); // Update correctIndex state variable
   }, []);
 
-  const handleSubmit = () => {
-    // Handle the submission here
-    console.log("Submission: ", selectedOption);
-  };
-
   // Conditional rendering: render the component only when randomIPAs has been populated
   if (randomIPAs.length === 0) {
     // If randomIPAs is empty, return null or a loading indicator
@@ -68,8 +62,10 @@ const Quiz = (correct_count, quiz_index) => {
     setSelectedOption(option); // update selectedOption when the option is changed
   };
 
-  console.log("Correct_count: ", correct_count);
-  console.log("Quiz_index: ", quiz_index);
+  console.log("Correct_count: ", params.correctCount);
+  console.log("Quiz_index: ", params.quizIndex);
+  console.log("handleAnswer: ", params.handleAnswer);
+  console.log("resetQuiz: ", params.resetQuiz);
 
   return (
     <div>
@@ -103,7 +99,12 @@ const Quiz = (correct_count, quiz_index) => {
           </div>
         </div>
         <SelectionMenu onChange={handleOptionChange} options={[1, 2, 3, 4]} />{" "}
-        <Button onClick={() => handleSubmit(selectedOption)}> Submit </Button>
+        <Button
+          onClick={() => params.handleAnswer(selectedOption, correctIndex)}
+        >
+          {" "}
+          Submit{" "}
+        </Button>
       </div>
 
       <Footer />
@@ -111,4 +112,4 @@ const Quiz = (correct_count, quiz_index) => {
   );
 };
 
-export default Quiz;
+export default QuizPage;
