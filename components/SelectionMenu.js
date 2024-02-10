@@ -5,6 +5,7 @@ const SelectionMenu = ({ options, onChange, display }) => {
     const selectedOption = event.target.value;
     onChange(selectedOption); // pass the selected option to the parent component
   };
+
   return (
     <select
       style={{
@@ -15,8 +16,9 @@ const SelectionMenu = ({ options, onChange, display }) => {
         borderColor: "black",
       }}
       onChange={handleChange}
+      defaultValue="" // Set defaultValue to an empty string to have no option initially selected
     >
-      <option disabled selected value>
+      <option value="" disabled>
         -- select an {display ? display : "option"} --
       </option>
       {options.map((option) => (
