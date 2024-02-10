@@ -244,4 +244,154 @@ export const IPA = {
     name: "voiced velar nasal",
     audiopath: "/audio/Velar_nasal.ogg.mp3",
   },
+  149: {
+    symbol: "ɮ",
+    name: "voiced alveolar lateral fricatives",
+    audiopath: "/audio/Voiced_alveolar_lateral_fricative.ogg.mp3",
+  },
+  104: {
+    symbol: "d",
+    name: "voiced alveolar plosive",
+    audiopath: "/audio/Voiced_alveolar_plosive.ogg.mp3",
+  },
+  133: {
+    symbol: "z",
+    name: "voiced alveolar sibilant",
+    audiopath: "/audio/Voiced_alveolar_sibilant.ogg.mp3",
+  },
+  127: {
+    symbol: "β",
+    name: "voiced bilabial fricative",
+    audiopath: "/audio/Voiced_bilabial_fricative.ogg.mp3",
+  },
+  102: {
+    symbol: "b",
+    name: "voiced bilabial plosive",
+    audiopath: "/audio/Voiced_bilabial_plosive.ogg.mp3",
+  },
+  131: {
+    symbol: "ð",
+    name: "voiced dental fricative",
+    audiopath: "/audio/Voiced_dental_fricative.ogg.mp3",
+  },
+  147: {
+    symbol: "ɦ",
+    name: "voiced glottal fricative",
+    audiopath: "/audio/Voiced_glottal_fricative.ogg.mp3",
+  },
+  129: {
+    symbol: "v",
+    name: "voiced labiodental fricative",
+    audiopath: "/audio/Voiced_labiodental_fricative.ogg.mp3",
+  },
+  139: {
+    symbol: "ʝ",
+    name: "voiced palatal fricative",
+    audiopath: "/audio/Voiced_palatal_fricative.ogg.mp3",
+  },
+  108: {
+    symbol: "ɟ",
+    name: "voiced palatal plosive",
+    audiopath: "/audio/Voiced_palatal_plosive.ogg.mp3",
+  },
+  183: {
+    symbol: "ʑ",
+    name: "voiced alveolo-palatal sibilant fricative",
+    audiopath: "/audio/Voiced_palato-alveolar_sibilant.ogg.mp3",
+  },
+  110: {
+    symbol: "ɡ",
+    name: "voiced velar plosive",
+    audiopath: "/audio/Voiced_velar_plosive.ogg.mp3",
+  },
+  148: {
+    symbol: "ɬ",
+    name: "voiceless alveolar lateral fricative",
+    audiopath: "/audio/Voiceless_alveolar_lateral_fricative.ogg.mp3",
+  },
+  103: {
+    symbol: "t",
+    name: "voiceless alveolar plosive",
+    audiopath: "/audio/Voiceless_alveolar_plosive.ogg.mp3",
+  },
+  132: {
+    symbol: "s",
+    name: "voiceless alveolar sibilant",
+    audiopath: "/audio/Voiceless_alveolar_sibilant.ogg.mp3",
+  },
+  126: {
+    symbol: "ɸ",
+    name: "voiceless bilabial fricative",
+    audiopath: "/audio/Voiceless_bilabial_fricative.ogg.mp3",
+  },
+  101: {
+    symbol: "p",
+    name: "voiceless bilabial plosive",
+    audiopath: "/audio/Voiceless_bilabial_plosive.ogg.mp3",
+  },
+  130: {
+    symbol: "θ",
+    name: "voiceless dental fricative",
+    audiopath: "/audio/Voiceless_dental_fricative.ogg.mp3",
+  },
+  146: {
+    symbol: "h",
+    name: "voiceless glottal fricative",
+    audiopath: "/audio/Voiceless_glottal_fricative.ogg.mp3",
+  },
+  128: {
+    symbol: "f",
+    name: "voiceless labiodental fricative",
+    audiopath: "/audio/Voiceless_labiodental_fricative.ogg.mp3",
+  },
+  138: {
+    symbol: "ç",
+    name: "voiceless palatal fricative",
+    audiopath: "/audio/Voiceless_palatal_fricative.ogg.mp3",
+  },
+  107: {
+    symbol: "c",
+    name: "voiceless palatal plosive",
+    audiopath: "/audio/Voiceless_palatal_plosive.ogg.mp3",
+  },
+  182: {
+    symbol: "ɕ",
+    name: "voiceless alveolo-palatal sibilant fricative",
+    audiopath: "/audio/Voiceless_palato-alveolar_sibilant.ogg.mp3",
+  },
+  144: {
+    symbol: "ħ",
+    name: "voiceless pharyngeal fricative",
+    audiopath: "/audio/Voiceless_pharyngeal_fricative.ogg.mp3",
+  },
+  136: {
+    symbol: "ʂ",
+    name: "voiceless retroflex sibilant fricative",
+    audiopath: "/audio/Voiceless_retroflex_sibilant.ogg.mp3",
+  },
+  105: {
+    symbol: "ʈ",
+    name: "voiceless retroflex plosive",
+    audiopath: "/audio/Voiceless_retroflex_stop.ogg.mp3",
+  },
+  142: {
+    symbol: "χ",
+    name: "voiceless uvular fricative",
+    audiopath: "/audio/Voiceless_uvular_fricative.ogg.mp3",
+  },
+  111: {
+    symbol: "q",
+    name: "voiceless uvular plosive",
+    audiopath: "/audio/Voiceless_uvular_plosive.ogg.mp3",
+  },
+  140: {
+    symbol: "x",
+    name: "voiceless velar fricative",
+    audiopath: "/audio/Voiceless_velar_fricative.ogg.mp3",
+  },
+  109: {
+    symbol: "k",
+    name: "voiceless velar plosive",
+    audiopath: "/audio/Voiceless_velar_plosive.ogg.mp3",
+  },
 };
