@@ -4,6 +4,7 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import SelectionMenu from "@components/SelectionMenu";
 import { useState, useEffect } from "react";
+import AlphabetChoice from "@components/AlphabetChoice";
 
 const LearningPage = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -35,7 +36,7 @@ const LearningPage = () => {
             options={["Random", "Character"]}
           />
           {selectedOption == "Random" && <p>Selected: {selectedOption}</p>}
-          {selectedOption == "Character" && <p>Selected: {selectedOption}</p>}
+          {selectedOption == "Character" && <AlphabetChoice />}
         </div>
       </div>
       <Footer />
