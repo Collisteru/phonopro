@@ -8,12 +8,12 @@ const { IPA } = require("../constants.js");
 import getRandomIPA from "@components/RandomIPA";
 
 // import SelectionButton from "../components/SelectionButton";
-// import SoundButton from "../components/SoundButton";
+import SoundButton from "../components/SoundButton";
 // import AudioChoice from "../components/AudioChoice";
 import CharacterBox from "../components/CharacterBox";
 
 const Quiz = () => {
-  const [randomIPA, setRandomIPA] = useState("");
+  const [randomIPAs, setRandomIPAs] = useState([]);
 
   // useEffect is necessary to block Hydration error
   useEffect(() => {
@@ -33,10 +33,24 @@ const Quiz = () => {
       // Return the random symbol information
       return randomSymbolInfo;
     };
-    setRandomIPA(getRandomIPA());
+    const RandomIPAs = Array.from({ length: 4 }, () => getRandomIPA());
+    console.log("RandomIPAs", RandomIPAs);
+    console.log("RandomIPAs[0]", RandomIPAs[0]);
+    setRandomIPAs(RandomIPAs);
   }, []);
 
-  const character = randomIPA;
+  // Conditional rendering: render the component only when randomIPAs has been populated
+  if (randomIPAs.length === 0) {
+    // If randomIPAs is empty, return null or a loading indicator
+    return null; // Or return a loading indicator JSX here
+  }
+
+  const character = randomIPAs[0];
+  const sound1 = randomIPAs[0];
+  const sound2 = randomIPAs[1];
+  const sound3 = randomIPAs[2];
+  const sound4 = randomIPAs[3];
+
   return (
     <div>
       <Header />
@@ -50,12 +64,12 @@ const Quiz = () => {
       >
         <CharacterBox character={character} />
         <div style={{ display: "flex", justifyContent: "center" }}>
-          {/* <SoundButton />
-          <SoundButton /> */}
+          <SoundButton text={1} audioPath={sound1.audiopath} />
+          <SoundButton text={2} audioPath={sound2.audiopath} />
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          {/* <SoundButton />
-          <SoundButton /> */}
+          <SoundButton text={3} audioPath={sound3.audiopath} />
+          <SoundButton text={4} audioPath={sound4.audiopath} />
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
           {/* <SelectionButton />
