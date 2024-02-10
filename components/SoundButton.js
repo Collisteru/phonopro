@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 // given text to display on button and audioPath to sound file
 const SoundButton = ({ text, audioPath }) => {
@@ -9,7 +10,7 @@ const SoundButton = ({ text, audioPath }) => {
 
   return (
     <div>
-      <button onClick={playSound}>{text}</button>
+      <Button onClick={playSound}>{text}</Button>
     </div>
   );
 };
