@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "./Button";
 
 // given text to display on button and audioPath to sound file
 const SoundButton = ({ text, audioPath }) => {

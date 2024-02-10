@@ -1,10 +1,11 @@
 import React from "react";
 
-const SelectionMenu = ({ options, onChange, display }) => {
+const SelectionMenu = ({ options, onChange }) => {
   const handleChange = (event) => {
     const selectedOption = event.target.value;
     onChange(selectedOption); // pass the selected option to the parent component
   };
+
   return (
     <select
       style={{
@@ -15,13 +16,14 @@ const SelectionMenu = ({ options, onChange, display }) => {
         borderColor: "black",
       }}
       onChange={handleChange}
+      defaultValue="" // Set defaultValue to an empty string to have no option initially selected
     >
-      <option disabled selected value>
-        -- select an {display ? display : "option"} --
+      <option value="" disabled>
+        -- select an option --
       </option>
-      {options.map((option) => (
-        <option key={option} value={option}>
-          {display && option.hasOwnProperty(display) ? option[display] : option}
+      {options.map((option, index) => (
+        <option key={index} value={option}>
+          {option}
         </option>
       ))}
     </select>

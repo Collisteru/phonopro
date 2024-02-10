@@ -1,8 +1,9 @@
 // pages/quizzing.js
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
 import SelectionMenu from "@components/SelectionMenu";
+import AlphabetChoice from "@components/AlphabetChoice";
 import { useState, useEffect } from "react";
 
 const LearningPage = () => {
@@ -34,6 +35,8 @@ const LearningPage = () => {
             onChange={handleOptionChange}
             options={["Random", "Character"]}
           />
+          {selectedOption == "Random" && <p>Selected: {selectedOption}</p>}
+          {selectedOption == "Character" && <AlphabetChoice />}
         </div>
       </div>
       <Footer />
