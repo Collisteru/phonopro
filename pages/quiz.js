@@ -57,15 +57,11 @@ const Quiz = () => {
     console.log("Submission: ", selectedOption);
   };
 
-<<<<<<< HEAD
-  const answer = randomIPAs[Math.floor(Math.random() * 4)];
-=======
   // Conditional rendering: render the component only when randomIPAs has been populated
   if (randomIPAs.length === 0) {
     // If randomIPAs is empty, return null or a loading indicator
     return null; // Or return a loading indicator JSX here
   }
->>>>>>> sean
 
   const character = randomIPAs[correctIndex];
 
@@ -90,7 +86,7 @@ const Quiz = () => {
           Press each of the numbered buttons to play the corresponding audio.
         </div>
         <br></br>
-        <CharacterBox character={answer} />
+        <CharacterBox character={character} />
         <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <SoundButton text={1} audioPath={sound1.audiopath} />
