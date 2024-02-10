@@ -6,6 +6,7 @@ import SelectionMenu from "@components/SelectionMenu";
 import AlphabetChoice from "@components/AlphabetChoice";
 import AlphabetLetter from "@components/AlphabetLetter";
 import getRandomIPA from "@components/RandomIPA";
+import Button from "@components/Button";
 import { useState, useEffect } from "react";
 
 const LearningPage = () => {
@@ -14,10 +15,6 @@ const LearningPage = () => {
   const handleOptionChange = (option) => {
     setSelectedOption(option);
   };
-
-  useEffect(() => {
-    console.log(selectedOption);
-  }, [selectedOption]); // Log the updated selectedOption whenever it changes
 
   return (
     <div>
@@ -40,7 +37,10 @@ const LearningPage = () => {
             options={["Random", "Character"]}
           />
           {selectedOption == "Random" && (
-            <AlphabetLetter letter={getRandomIPA()} />
+            <>
+              <AlphabetLetter letter={getRandomIPA()} />
+              <Button>More!</Button>
+            </>
           )}
           {selectedOption == "Character" && <AlphabetChoice />}
         </div>
