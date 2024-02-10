@@ -29,7 +29,7 @@ const Quiz = ({ randomIPAs }) => {
     console.log("Submission: ", submission);
   };
 
-  const character = randomIPAs[0];
+  const answer = randomIPAs[Math.floor(Math.random() * 4)];
 
   const [option1, option2, option3, option4] = randomIPAs;
 
@@ -54,7 +54,7 @@ const Quiz = ({ randomIPAs }) => {
           Press each of the numbered buttons to play the corresponding audio.
         </div>
         <br></br>
-        <CharacterBox character={character} />
+        <CharacterBox character={answer} />
         <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <SoundButton text={1} audioPath={option1.audiopath} />
