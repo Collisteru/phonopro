@@ -14,33 +14,47 @@ import CharacterBox from "../components/CharacterBox";
 const Quiz = () => {
   const [randomIPAs, setRandomIPAs] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null); // Add selectedOption state variable
+  const [correctIndex, setCorrectIndex] = useState(null); // Declare correctIndex state variable
 
   // useEffect is necessary to block Hydration error
+  //
   useEffect(() => {
     const getRandomIPA = () => {
       // Get the keys (symbol codes) of the IPA object
       const symbolCodes = Object.keys(IPA);
 
-      // Generate a random index within the range of symbol codes
-      const randomIndex = Math.floor(Math.random() * symbolCodes.length);
+      // Generate a list of random indices within the range of symbol codes
+      const randomIndices = Array.from({ length: 4 }, () =>
+        Math.floor(Math.random() * symbolCodes.length)
+      );
 
-      // Use the random index to pick a random symbol code
-      const randomSymbolCode = symbolCodes[randomIndex];
+      // Assign selectedIndex to a random numebr between 0 and 3 inclusive
+      const selectedIndex = Math.floor(Math.random() * 4);
 
       // Retrieve the corresponding symbol information using the random symbol code
-      const randomSymbolInfo = IPA[randomSymbolCode];
+      const randomSymbolCode = [];
+      const randomSymbolInfo = [];
+      for (let i = 0; i < 4; i++) {
+        randomSymbolCode.push(symbolCodes[randomIndices[i]]);
+        randomSymbolInfo.push(IPA[randomSymbolCode[i]]);
+      }
 
       // Return the random symbol information
-      return randomSymbolInfo;
+      return { RandomIPAs: randomSymbolInfo, correctIndex: selectedIndex }; // Return an object with RandomIPAs and correctIndex
     };
-    const RandomIPAs = Array.from({ length: 4 }, () => getRandomIPA());
 
+    const { RandomIPAs, correctIndex } = getRandomIPA();
+
+    console.log("CorrectIndex: ", correctIndex);
     setRandomIPAs(RandomIPAs);
+    setCorrectIndex(correctIndex); // Update correctIndex state variable
   }, []);
 
-  const handleSubmit = (submission) => {
+  console.log("RandomIPAs: ", randomIPAs);
+
+  const handleSubmit = () => {
     // Handle the submission here
-    console.log("Submission: ", submission);
+    console.log("Submission: ", selectedOption);
   };
 
   // Conditional rendering: render the component only when randomIPAs has been populated
@@ -49,18 +63,12 @@ const Quiz = () => {
     return null; // Or return a loading indicator JSX here
   }
 
-  const character = randomIPAs[0];
-
-  // Shuffle the randomIPAs array
-  for (let i = randomIPAs.length - 1; i >= 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [randomIPAs[i], randomIPAs[j]] = [randomIPAs[j], randomIPAs[i]];
-  }
+  const character = randomIPAs[correctIndex];
 
   const [sound1, sound2, sound3, sound4] = randomIPAs;
 
   const handleOptionChange = (option) => {
-    setSelectedOption(option); // Update selectedOption when the option is changed
+    setSelectedOption(option); // update selectedOption when the option is changed
   };
 
   return (
@@ -94,7 +102,7 @@ const Quiz = () => {
             Select which audio file corresponds to the given IPA symbol:
           </div>
         </div>
-        <SelectionMenu onChange={handleOptionChange} />{" "}
+        <SelectionMenu onChange={handleOptionChange} options={[1, 2, 3, 4]} />{" "}
         <Button onClick={() => handleSubmit(selectedOption)}> Submit </Button>
       </div>
 
