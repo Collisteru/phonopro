@@ -34,8 +34,7 @@ const Quiz = () => {
       return randomSymbolInfo;
     };
     const RandomIPAs = Array.from({ length: 4 }, () => getRandomIPA());
-    console.log("RandomIPAs", RandomIPAs);
-    console.log("RandomIPAs[0]", RandomIPAs[0]);
+
     setRandomIPAs(RandomIPAs);
   }, []);
 
@@ -46,10 +45,14 @@ const Quiz = () => {
   }
 
   const character = randomIPAs[0];
-  const sound1 = randomIPAs[0];
-  const sound2 = randomIPAs[1];
-  const sound3 = randomIPAs[2];
-  const sound4 = randomIPAs[3];
+
+  // Shuffle the randomIPAs array
+  for (let i = randomIPAs.length - 1; i >= 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [randomIPAs[i], randomIPAs[j]] = [randomIPAs[j], randomIPAs[i]];
+  }
+
+  const [sound1, sound2, sound3, sound4] = randomIPAs;
 
   return (
     <div>
