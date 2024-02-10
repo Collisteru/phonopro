@@ -7,13 +7,13 @@ import { useState, useEffect } from "react";
 const { IPA } = require("../constants.js");
 import getRandomIPA from "@components/RandomIPA";
 
-// import SelectionButton from "../components/SelectionButton";
+import SelectionMenu from "../components/SelectionMenu";
 import SoundButton from "../components/SoundButton";
-// import AudioChoice from "../components/AudioChoice";
 import CharacterBox from "../components/CharacterBox";
 
 const Quiz = () => {
   const [randomIPAs, setRandomIPAs] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null); // Add selectedOption state variable
 
   // useEffect is necessary to block Hydration error
   useEffect(() => {
@@ -38,6 +38,11 @@ const Quiz = () => {
     setRandomIPAs(RandomIPAs);
   }, []);
 
+  const handleSubmit = (submission) => {
+    // Handle the submission here
+    console.log("Submission: ", submission);
+  };
+
   // Conditional rendering: render the component only when randomIPAs has been populated
   if (randomIPAs.length === 0) {
     // If randomIPAs is empty, return null or a loading indicator
@@ -54,6 +59,10 @@ const Quiz = () => {
 
   const [sound1, sound2, sound3, sound4] = randomIPAs;
 
+  const handleOptionChange = (option) => {
+    setSelectedOption(option); // Update selectedOption when the option is changed
+  };
+
   return (
     <div>
       <Header />
@@ -62,7 +71,7 @@ const Quiz = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          marginTop: "10vh",
+          marginTop: "8vh",
         }}
       >
         <div>
@@ -79,12 +88,14 @@ const Quiz = () => {
           <SoundButton text={3} audioPath={sound3.audiopath} />
           <SoundButton text={4} audioPath={sound4.audiopath} />
         </div>
+        <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          {/* <SelectionButton />
-          <SelectionButton />
-          <SelectionButton />
-          <SelectionButton /> */}
+          <div>
+            Select which audio file corresponds to the given IPA symbol:
+          </div>
         </div>
+        <SelectionMenu onChange={handleOptionChange} />{" "}
+        <Button onClick={() => handleSubmit(selectedOption)}> Submit </Button>
       </div>
 
       <Footer />
