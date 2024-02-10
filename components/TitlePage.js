@@ -2,14 +2,20 @@
 
 const TitlePage = () => {
   return (
-    <div style={{ textAlign: "center", fontSize: "3rem" }}>
-      <div style={{ textAlign: "center", fontSize: "3rem" }}>
+    <div>
+      <div style={{ textAlign: "center", fontSize: "1.5rem" }}>
         <h1>Welcome to</h1>
-        <h1>PhonoPro</h1>
+        <img
+          src="/fonopro_logo_close_cropped.png"
+          alt="Fonopro Logo"
+          style={{ width: "1000px", height: "auto" }}
+        />
       </div>
       <div style={{ textAlign: "center", fontSize: "2rem" }}>
-        <p>An Eductational Project for Blasterhacks 2024</p>
-        <p>By Jun Lee and Sean Carter</p>
+        <p>
+          An Educational Project for Blasterhacks 2024 By{" "}
+          <strong>Jun Lee and Sean Carter</strong>
+        </p>
       </div>
     </div>
   );
