@@ -1,6 +1,6 @@
 import CharacterBox from "./CharacterBox";
 import SelectionMenu from "./SelectionMenu";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const { IPA } = require("../constants.js");
 
 const AlphabetChoice = () => {
@@ -29,11 +29,14 @@ const AlphabetChoice = () => {
         onChange={handleParameterChange}
         options={["Symbol", "Name"]}
       />
-      <SelectionMenu
-        onChange={handleCharacterChange}
-        options={Object.entries(IPA).map(([key, value]) => value)}
-        display={parameter}
-      />
+      {parameter && (
+        <SelectionMenu
+          onChange={handleCharacterChange}
+          options={Object.values(IPA).map(
+            (item) => item[parameter.toLowerCase()]
+          )}
+        />
+      )}
     </>
   );
 };
