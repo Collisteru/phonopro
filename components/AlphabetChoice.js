@@ -16,13 +16,14 @@ const AlphabetChoice = () => {
 
   // update options dataset depending on parameter
   useEffect(() => {
-    console.log(parameter);
-    //   if (parameter === "Symbol") {
-    //     setAlphabet(IPA);
-    //   } else if (parameter === "Name") {
-    //     setAlphabet(IPA);
-    //   }
-  }, [parameter]);
+    Object.values(IPA).forEach((item) => {
+      if (item[parameter?.toLowerCase()] == character) {
+        setAlphabet(item);
+      }
+    });
+    console.log(alphabet);
+  }, [character]);
+
   return (
     <>
       <SelectionMenu
@@ -37,6 +38,7 @@ const AlphabetChoice = () => {
           )}
         />
       )}
+      {alphabet && <CharacterBox character={alphabet} />}
     </>
   );
 };

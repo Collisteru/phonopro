@@ -3,8 +3,8 @@
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import SelectionMenu from "@components/SelectionMenu";
-import { useState, useEffect } from "react";
 import AlphabetChoice from "@components/AlphabetChoice";
+import { useState, useEffect } from "react";
 
 const LearningPage = () => {
   const [selectedOption, setSelectedOption] = useState(null);
