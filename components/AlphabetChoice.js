@@ -25,7 +25,7 @@ const AlphabetChoice = () => {
   }, [character]);
 
   return (
-    <>
+    <div>
       <SelectionMenu
         onChange={handleParameterChange}
         options={["Symbol", "Name"]}
@@ -38,13 +38,15 @@ const AlphabetChoice = () => {
           )}
         />
       )}
-      {alphabet !== null && (
-        <SoundButton
-          text={<CharacterBox character={alphabet} />}
-          audioPath={alphabet.audiopath}
-        />
-      )}
-    </>
+      <div>
+        {alphabet !== null && (
+          <SoundButton
+            text={<CharacterBox character={alphabet} />}
+            audioPath={alphabet.audiopath}
+          />
+        )}
+      </div>
+    </div>
   );
 };
 
