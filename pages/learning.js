@@ -1,7 +1,7 @@
 // pages/quizzing.js
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
 import SelectionMenu from "@components/SelectionMenu";
 import { useState, useEffect } from "react";
 
