@@ -12,44 +12,39 @@ import SoundButton from "../components/SoundButton";
 import CharacterBox from "../components/CharacterBox";
 
 const Quiz = () => {
-  const [randomIPAs, setRandomIPAs] = useState([]);
+  const [randomIPAs, setRandomIPAs] = useState(
+    Array.from({ length: 4 }, () => getRandomIPA())
+  );
   const [selectedOption, setSelectedOption] = useState(null); // Add selectedOption state variable
 
-  // useEffect is necessary to block Hydration error
-  useEffect(() => {
-    const getRandomIPA = () => {
-      // Get the keys (symbol codes) of the IPA object
-      const symbolCodes = Object.keys(IPA);
+  // // useEffect is necessary to block Hydration error
+  // useEffect(() => {
+  //   const getRandomIPA = () => {
+  //     // Get the keys (symbol codes) of the IPA object
+  //     const symbolCodes = Object.keys(IPA);
 
-      // Generate a random index within the range of symbol codes
-      const randomIndex = Math.floor(Math.random() * symbolCodes.length);
+  //     // Generate a random index within the range of symbol codes
+  //     const randomIndex = Math.floor(Math.random() * symbolCodes.length);
 
-      // Use the random index to pick a random symbol code
-      const randomSymbolCode = symbolCodes[randomIndex];
+  //     // Use the random index to pick a random symbol code
+  //     const randomSymbolCode = symbolCodes[randomIndex];
 
-      // Retrieve the corresponding symbol information using the random symbol code
-      const randomSymbolInfo = IPA[randomSymbolCode];
+  //     // Retrieve the corresponding symbol information using the random symbol code
+  //     const randomSymbolInfo = IPA[randomSymbolCode];
 
-      // Return the random symbol information
-      return randomSymbolInfo;
-    };
-    const RandomIPAs = Array.from({ length: 4 }, () => getRandomIPA());
-
-    setRandomIPAs(RandomIPAs);
-  }, []);
+  //     // Return the random symbol information
+  //     return randomSymbolInfo;
+  //   };
+  //   setRandomIPAs(randomIPAs);
+  // }, [randomIPAs]);
 
   const handleSubmit = (submission) => {
     // Handle the submission here
     console.log("Submission: ", submission);
   };
 
-  // Conditional rendering: render the component only when randomIPAs has been populated
-  if (randomIPAs.length === 0) {
-    // If randomIPAs is empty, return null or a loading indicator
-    return null; // Or return a loading indicator JSX here
-  }
-
-  const character = randomIPAs[0];
+  // conditionally render the character
+  const character = randomIPAs ? randomIPAs[0] : null;
 
   // Shuffle the randomIPAs array
   for (let i = randomIPAs.length - 1; i >= 0; i--) {
