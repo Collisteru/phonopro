@@ -41,7 +41,7 @@ const AlphabetChoice = () => {
       {alphabet !== null && (
         <SoundButton
           text={<CharacterBox character={alphabet} />}
-          audioFile={alphabet.audiopath}
+          audioPath={alphabet.audiopath}
         />
       )}
     </>
