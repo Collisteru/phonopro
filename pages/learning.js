@@ -3,6 +3,9 @@
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import SelectionMenu from "@components/SelectionMenu";
+import AlphabetChoice from "@components/AlphabetChoice";
+import AlphabetLetter from "@components/AlphabetLetter";
+import getRandomIPA from "@components/RandomIPA";
 import { useState, useEffect } from "react";
 
 const LearningPage = () => {
@@ -25,6 +28,8 @@ const LearningPage = () => {
           flexDirection: "column",
           alignItems: "center",
           marginTop: selectedOption ? "8vh" : "25vh",
+          overflow: "auto",
+          paddingBottom: "10vh",
         }}
       >
         <div style={{ textAlign: "center" }}>
@@ -34,8 +39,10 @@ const LearningPage = () => {
             onChange={handleOptionChange}
             options={["Random", "Character"]}
           />
-          {selectedOption == "Random" && <p>Selected: {selectedOption}</p>}
-          {selectedOption == "Character" && <p>Selected: {selectedOption}</p>}
+          {selectedOption == "Random" && (
+            <AlphabetLetter letter={getRandomIPA()} />
+          )}
+          {selectedOption == "Character" && <AlphabetChoice />}
         </div>
       </div>
       <Footer />
