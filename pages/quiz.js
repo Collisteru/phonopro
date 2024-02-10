@@ -94,7 +94,7 @@ const Quiz = () => {
             Select which audio file corresponds to the given IPA symbol:
           </div>
         </div>
-        <SelectionMenu onChange={handleOptionChange} />{" "}
+        <SelectionMenu onChange={handleOptionChange} options={[1, 2, 3, 4]} />{" "}
         <Button onClick={() => handleSubmit(selectedOption)}> Submit </Button>
       </div>
 
