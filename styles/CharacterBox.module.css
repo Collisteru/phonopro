@@ -1,0 +1,22 @@
+.container {
+  flex: true;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center text */
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border-width: 3px;
+  border-color: black;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.symbol {
+  font-size: 120px;
+  font-family: serif;
+  color: black;
+}

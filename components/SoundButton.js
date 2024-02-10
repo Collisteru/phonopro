@@ -9,9 +9,13 @@ const SoundButton = ({ text, audioPath }) => {
   };
 
   return (
-    <div>
-      <Button onClick={playSound}>{text}</Button>
-    </div>
+    <button
+      className="border border-black bg-white text-black font-bold py-5 px-5 px-4"
+      onClick={playSound}
+    >
+      {" "}
+      {text}
+    </button>
   );
 };
 

@@ -1,4 +1,6 @@
-const AudioChoice = () => {
+const { IPA } = require("../constants.js");
+
+function getRandomIPA() {
   // Get the keys (symbol codes) of the IPA object
   const symbolCodes = Object.keys(IPA);
 
@@ -13,4 +15,6 @@ const AudioChoice = () => {
 
   // Return the random symbol information
   return randomSymbolInfo;
-};
+}
+
+module.exports = getRandomIPA;
