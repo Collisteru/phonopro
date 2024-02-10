@@ -11,7 +11,7 @@ import SelectionMenu from "../components/SelectionMenu";
 import SoundButton from "../components/SoundButton";
 import CharacterBox from "../components/CharacterBox";
 
-const Quiz = () => {
+const Quiz = (correct_count, quiz_index) => {
   const [randomIPAs, setRandomIPAs] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null); // Add selectedOption state variable
   const [correctIndex, setCorrectIndex] = useState(null); // Declare correctIndex state variable
@@ -45,12 +45,9 @@ const Quiz = () => {
 
     const { RandomIPAs, correctIndex } = getRandomIPA();
 
-    console.log("CorrectIndex: ", correctIndex);
     setRandomIPAs(RandomIPAs);
     setCorrectIndex(correctIndex); // Update correctIndex state variable
   }, []);
-
-  console.log("RandomIPAs: ", randomIPAs);
 
   const handleSubmit = () => {
     // Handle the submission here
@@ -70,6 +67,9 @@ const Quiz = () => {
   const handleOptionChange = (option) => {
     setSelectedOption(option); // update selectedOption when the option is changed
   };
+
+  console.log("Correct_count: ", correct_count);
+  console.log("Quiz_index: ", quiz_index);
 
   return (
     <div>
