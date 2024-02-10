@@ -1,19 +1,18 @@
-// pages/quiz.js
+// pages/quizzing.js
 
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import Button from "@components/Button";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Button from "../components/Button";
 import { useState, useEffect } from "react";
+const { IPA } = require("../constants.js");
 import getRandomIPA from "@components/RandomIPA";
 
-import SelectionMenu from "@components/SelectionMenu";
-import SoundButton from "@components/SoundButton";
-import CharacterBox from "@components/CharacterBox";
+import SelectionMenu from "../components/SelectionMenu";
+import SoundButton from "../components/SoundButton";
+import CharacterBox from "../components/CharacterBox";
 
 const Quiz = () => {
-  const [randomIPAs, setRandomIPAs] = useState(
-    Array.from({ length: 4 }, () => getRandomIPA())
-  );
+  const [randomIPAs, setRandomIPAs] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null); // Add selectedOption state variable
 
   // useEffect is necessary to block Hydration error
@@ -34,13 +33,21 @@ const Quiz = () => {
       // Return the random symbol information
       return randomSymbolInfo;
     };
-    setRandomIPAs(randomIPAs);
-  }, [randomIPAs]);
+    const RandomIPAs = Array.from({ length: 4 }, () => getRandomIPA());
 
-  const handleSubmit = () => {
+    setRandomIPAs(RandomIPAs);
+  }, []);
+
+  const handleSubmit = (submission) => {
     // Handle the submission here
-    console.log("Submission: ", selectedOption);
+    console.log("Submission: ", submission);
   };
+
+  // Conditional rendering: render the component only when randomIPAs has been populated
+  if (randomIPAs.length === 0) {
+    // If randomIPAs is empty, return null or a loading indicator
+    return null; // Or return a loading indicator JSX here
+  }
 
   const character = randomIPAs[0];
 
@@ -65,8 +72,6 @@ const Quiz = () => {
           flexDirection: "column",
           alignItems: "center",
           marginTop: "8vh",
-          overflow: "auto",
-          paddingBottom: "10vh",
         }}
       >
         <div>
@@ -89,7 +94,7 @@ const Quiz = () => {
             Select which audio file corresponds to the given IPA symbol:
           </div>
         </div>
-        <SelectionMenu onChange={handleOptionChange} options={[1, 2, 3, 4]} />{" "}
+        <SelectionMenu onChange={handleOptionChange} />{" "}
         <Button onClick={() => handleSubmit(selectedOption)}> Submit </Button>
       </div>
 
