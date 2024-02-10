@@ -1,5 +1,6 @@
 // components/TitlePage.js
 
+import Link from "next/link";
 import Button from "../components/Button";
 
 const TitlePage = () => {
@@ -29,8 +30,12 @@ const TitlePage = () => {
         </p>
       </div>
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <Button onClick={handleClick}>Learning Mode</Button>
-        <Button onClick={handleClick}>Quizzing Mode</Button>
+        <Link href="/learning">
+          <Button>Learning Mode</Button>
+        </Link>
+        <Link href="/quizzing">
+          <Button>Quizzing Mode</Button>
+        </Link>
       </div>
     </div>
   );
