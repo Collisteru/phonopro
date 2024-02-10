@@ -1,10 +1,10 @@
-import styles from "./Footer.module.css";
+import styles from "../styles/Footer.module.css";
 
 export default function Footer() {
   return (
     <>
       <footer className={styles.footer}>
-        <l>Our beautiful PhonoPro logo will go here!</l>
+        <l>© MMXXIV</l>
       </footer>
     </>
   );
