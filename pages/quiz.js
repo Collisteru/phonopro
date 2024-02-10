@@ -1,16 +1,16 @@
-// pages/quizzing.js
+// pages/quiz.js
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Button from "../components/Button";
-import { useState, useEffect } from "react";
-const { IPA } = require("../constants.js");
+import Header from "@components/Header";
+import Footer from "@components/Footer";
+import Button from "@components/Button";
+import { useState } from "react";
 import getRandomIPA from "@components/RandomIPA";
 
-import SelectionMenu from "../components/SelectionMenu";
-import SoundButton from "../components/SoundButton";
-import CharacterBox from "../components/CharacterBox";
+import SelectionMenu from "@components/SelectionMenu";
+import SoundButton from "@components/SoundButton";
+import CharacterBox from "@components/CharacterBox";
 
+// server side fetching
 export async function getServerSideProps() {
   const randomIPAs = Array.from({ length: 4 }, () => getRandomIPA());
   return {
