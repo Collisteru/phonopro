@@ -1,11 +1,21 @@
 // pages/quizzing.js
 
-import Head from "next/head";
-
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SelectionMenu from "@components/SelectionMenu";
+import { useState, useEffect } from "react";
 
 const LearningPage = () => {
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+  };
+
+  useEffect(() => {
+    console.log(selectedOption);
+  }, [selectedOption]); // Log the updated selectedOption whenever it changes
+
   return (
     <div>
       <Header />
@@ -14,12 +24,16 @@ const LearningPage = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          marginTop: "25vh",
+          marginTop: selectedOption ? "8vh" : "25vh",
         }}
       >
         <div style={{ textAlign: "center" }}>
           <h1>Learning Mode</h1>
-          <p>This is the Learning Mode page. Add your content here.</p>
+          <p>Practice by: </p>
+          <SelectionMenu
+            onChange={handleOptionChange}
+            options={["Random", "Character"]}
+          />
         </div>
       </div>
       <Footer />
