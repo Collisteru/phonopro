@@ -62,10 +62,15 @@ const Quiz = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          marginTop: "25vh",
+          marginTop: "10vh",
         }}
       >
+        <div>
+          Press each of the numbered buttons to play the corresponding audio.
+        </div>
+        <br></br>
         <CharacterBox character={character} />
+        <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <SoundButton text={1} audioPath={sound1.audiopath} />
           <SoundButton text={2} audioPath={sound2.audiopath} />
