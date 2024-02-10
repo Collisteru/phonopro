@@ -3,26 +3,39 @@
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import Button from "@components/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import getRandomIPA from "@components/RandomIPA";
 
 import SelectionMenu from "@components/SelectionMenu";
 import SoundButton from "@components/SoundButton";
 import CharacterBox from "@components/CharacterBox";
 
-// server side fetching
-export async function getServerSideProps() {
-  const randomIPAs = Array.from({ length: 4 }, () => getRandomIPA());
-  return {
-    props: {
-      randomIPAs,
-    },
-  };
-}
+const Quiz = () => {
+  const [randomIPAs, setRandomIPAs] = useState(
+    Array.from({ length: 4 }, () => getRandomIPA())
+  );
+  const [selectedOption, setSelectedOption] = useState(null); // Add selectedOption state variable
 
-const Quiz = ({ randomIPAs }) => {
-  // const [randomIPAs, setRandomIPAs] = useState([]);
-  const [selectedOption, setSelectedOption] = useState(null);
+  // useEffect is necessary to block Hydration error
+  useEffect(() => {
+    const getRandomIPA = () => {
+      // Get the keys (symbol codes) of the IPA object
+      const symbolCodes = Object.keys(IPA);
+
+      // Generate a random index within the range of symbol codes
+      const randomIndex = Math.floor(Math.random() * symbolCodes.length);
+
+      // Use the random index to pick a random symbol code
+      const randomSymbolCode = symbolCodes[randomIndex];
+
+      // Retrieve the corresponding symbol information using the random symbol code
+      const randomSymbolInfo = IPA[randomSymbolCode];
+
+      // Return the random symbol information
+      return randomSymbolInfo;
+    };
+    setRandomIPAs(randomIPAs);
+  }, [randomIPAs]);
 
   const handleSubmit = () => {
     // Handle the submission here
@@ -40,7 +53,7 @@ const Quiz = ({ randomIPAs }) => {
   const [sound1, sound2, sound3, sound4] = randomIPAs;
 
   const handleOptionChange = (option) => {
-    setSelectedOption(option); // update selectedOption when the option is changed
+    setSelectedOption(option); // Update selectedOption when the option is changed
   };
 
   return (
