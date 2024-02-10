@@ -46,12 +46,6 @@ const Quiz = () => {
   // conditionally render the character
   const character = randomIPAs ? randomIPAs[0] : null;
 
-  // Shuffle the randomIPAs array
-  for (let i = randomIPAs.length - 1; i >= 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [randomIPAs[i], randomIPAs[j]] = [randomIPAs[j], randomIPAs[i]];
-  }
-
   const [sound1, sound2, sound3, sound4] = randomIPAs;
 
   const handleOptionChange = (option) => {
