@@ -24,9 +24,9 @@ const Quiz = ({ randomIPAs }) => {
   // const [randomIPAs, setRandomIPAs] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const handleSubmit = (submission) => {
+  const handleSubmit = () => {
     // Handle the submission here
-    console.log("Submission: ", submission);
+    console.log("Submission: ", selectedOption);
   };
 
   const character = randomIPAs[0];
