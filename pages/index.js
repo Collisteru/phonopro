@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
-import Sounder from "@components/Sounder";
+import SoundButton from "@components/SoundButton";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
         <p className="description">
           Get started by editing <code>pages/index.js</code>
         </p>
-        <Sounder audioFile="../public/resources/test.mp3" text="CLICK" />
+        <SoundButton text="This is a test" audioPath="/test.mp3" />
       </main>
 
       <Footer />
