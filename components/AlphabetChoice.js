@@ -1,5 +1,6 @@
 import CharacterBox from "./CharacterBox";
 import SelectionMenu from "./SelectionMenu";
+import SoundButton from "./SoundButton";
 import { useEffect, useState } from "react";
 const { IPA } = require("../constants.js");
 
@@ -17,11 +18,10 @@ const AlphabetChoice = () => {
   // update options dataset depending on parameter
   useEffect(() => {
     Object.values(IPA).forEach((item) => {
-      if (item[parameter?.toLowerCase()] == character) {
+      if (item[parameter?.toLowerCase()] === character) {
         setAlphabet(item);
       }
     });
-    console.log(alphabet);
   }, [character]);
 
   return (
@@ -38,7 +38,12 @@ const AlphabetChoice = () => {
           )}
         />
       )}
-      {alphabet && <CharacterBox character={alphabet} />}
+      {alphabet !== null && (
+        <SoundButton
+          text={<CharacterBox character={alphabet} />}
+          audioFile={alphabet.audiopath}
+        />
+      )}
     </>
   );
 };
