@@ -1,8 +1,6 @@
 import React from "react";
 
-const SelectionMenu = () => {
-  const options = [1, 2, 3, 4];
-
+const SelectionMenu = ({ options }) => {
   return (
     <select
       style={{
