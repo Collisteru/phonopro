@@ -222,7 +222,7 @@ export const IPA = {
   117: {
     symbol: "ɳ",
     name: "voiced retroflex nasal",
-    audiopath: "/audio/Retroflex_nasal.ogg.mp3",
+    audiopath: "/audio/Retroflex_nasal.ogg",
   },
   120: {
     symbol: "ɴ",
