@@ -7,13 +7,20 @@ import AlphabetChoice from "@components/AlphabetChoice";
 import AlphabetLetter from "@components/AlphabetLetter";
 import getRandomIPA from "@components/RandomIPA";
 import Button from "@components/Button";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const LearningPage = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const [randomLetterKey, setRandomLetterKey] = useState(0);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
+  };
+
+  const handleMoreClick = () => {
+    if (selectedOption === "Random") {
+      setRandomLetterKey((prevKey) => prevKey + 1);
+    }
   };
 
   return (
@@ -39,7 +46,7 @@ const LearningPage = () => {
           {selectedOption == "Random" && (
             <>
               <AlphabetLetter letter={getRandomIPA()} />
-              <Button>More!</Button>
+              <Button onClick={handleMoreClick}>More!</Button>
             </>
           )}
           {selectedOption == "Character" && <AlphabetChoice />}
