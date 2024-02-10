@@ -31,7 +31,13 @@ const Quiz = ({ randomIPAs }) => {
 
   const character = randomIPAs[0];
 
-  const [option1, option2, option3, option4] = randomIPAs;
+  // Shuffle the randomIPAs array
+  for (let i = randomIPAs.length - 1; i >= 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [randomIPAs[i], randomIPAs[j]] = [randomIPAs[j], randomIPAs[i]];
+  }
+
+  const [sound1, sound2, sound3, sound4] = randomIPAs;
 
   const handleOptionChange = (option) => {
     setSelectedOption(option); // update selectedOption when the option is changed
@@ -57,12 +63,12 @@ const Quiz = ({ randomIPAs }) => {
         <CharacterBox character={character} />
         <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <SoundButton text={1} audioPath={option1.audiopath} />
-          <SoundButton text={2} audioPath={option2.audiopath} />
+          <SoundButton text={1} audioPath={sound1.audiopath} />
+          <SoundButton text={2} audioPath={sound2.audiopath} />
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <SoundButton text={3} audioPath={option3.audiopath} />
-          <SoundButton text={4} audioPath={option4.audiopath} />
+          <SoundButton text={3} audioPath={sound3.audiopath} />
+          <SoundButton text={4} audioPath={sound4.audiopath} />
         </div>
         <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
