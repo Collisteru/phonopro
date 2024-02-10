@@ -6,18 +6,22 @@ import SelectionMenu from "@components/SelectionMenu";
 import AlphabetChoice from "@components/AlphabetChoice";
 import AlphabetLetter from "@components/AlphabetLetter";
 import getRandomIPA from "@components/RandomIPA";
-import { useState, useEffect } from "react";
+import Button from "@components/Button";
+import { useState } from "react";
 
 const LearningPage = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const [randomLetterKey, setRandomLetterKey] = useState(0);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
   };
 
-  useEffect(() => {
-    console.log(selectedOption);
-  }, [selectedOption]); // Log the updated selectedOption whenever it changes
+  const handleMoreClick = () => {
+    if (selectedOption === "Random") {
+      setRandomLetterKey((prevKey) => prevKey + 1);
+    }
+  };
 
   return (
     <div>
@@ -40,7 +44,10 @@ const LearningPage = () => {
             options={["Random", "Character"]}
           />
           {selectedOption == "Random" && (
-            <AlphabetLetter letter={getRandomIPA()} />
+            <>
+              <AlphabetLetter letter={getRandomIPA()} />
+              <Button onClick={handleMoreClick}>More!</Button>
+            </>
           )}
           {selectedOption == "Character" && <AlphabetChoice />}
         </div>
