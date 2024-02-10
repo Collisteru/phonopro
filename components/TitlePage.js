@@ -1,7 +1,7 @@
 // components/TitlePage.js
 
 import Link from "next/link";
-import Button from "../components/Button";
+import Button from "./Button";
 
 const TitlePage = () => {
   const handleClick = () => {
