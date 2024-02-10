@@ -34,6 +34,8 @@ const LearningPage = () => {
             onChange={handleOptionChange}
             options={["Random", "Character"]}
           />
+          {selectedOption == "Random" && <p>Selected: {selectedOption}</p>}
+          {selectedOption == "Character" && <p>Selected: {selectedOption}</p>}
         </div>
       </div>
       <Footer />
