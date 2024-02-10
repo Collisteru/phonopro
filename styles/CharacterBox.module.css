@@ -1,0 +1,22 @@
+/* FILEPATH: /c:/Users/seand/software/programs/hackathon/blasterHacks/phonopro/styles/CharacterBox.module.css */
+.container {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border-width: 2px;
+  border-color: black;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.symbol {
+  font-size: 48px;
+  font-family: serif;
+  color: black;
+}
