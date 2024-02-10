@@ -1,8 +1,10 @@
 import React from "react";
 
-const SelectionMenu = () => {
-  const options = [1, 2, 3, 4];
-
+const SelectionMenu = ({ options, onChange }) => {
+  const handleChange = (event) => {
+    const selectedOption = event.target.value;
+    onChange(selectedOption);
+  };
   return (
     <select
       style={{
@@ -12,6 +14,7 @@ const SelectionMenu = () => {
         borderWidth: "3px",
         borderColor: "black",
       }}
+      onChange={handleChange}
     >
       {options.map((option) => (
         <option key={option} value={option}>

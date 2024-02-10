@@ -11,56 +11,30 @@ import SelectionMenu from "../components/SelectionMenu";
 import SoundButton from "../components/SoundButton";
 import CharacterBox from "../components/CharacterBox";
 
-const Quiz = () => {
-  const [randomIPAs, setRandomIPAs] = useState([]);
-  const [selectedOption, setSelectedOption] = useState(null); // Add selectedOption state variable
+export async function getServerSideProps() {
+  const randomIPAs = Array.from({ length: 4 }, () => getRandomIPA());
+  return {
+    props: {
+      randomIPAs,
+    },
+  };
+}
 
-  // useEffect is necessary to block Hydration error
-  useEffect(() => {
-    const getRandomIPA = () => {
-      // Get the keys (symbol codes) of the IPA object
-      const symbolCodes = Object.keys(IPA);
-
-      // Generate a random index within the range of symbol codes
-      const randomIndex = Math.floor(Math.random() * symbolCodes.length);
-
-      // Use the random index to pick a random symbol code
-      const randomSymbolCode = symbolCodes[randomIndex];
-
-      // Retrieve the corresponding symbol information using the random symbol code
-      const randomSymbolInfo = IPA[randomSymbolCode];
-
-      // Return the random symbol information
-      return randomSymbolInfo;
-    };
-    const RandomIPAs = Array.from({ length: 4 }, () => getRandomIPA());
-
-    setRandomIPAs(RandomIPAs);
-  }, []);
+const Quiz = ({ randomIPAs }) => {
+  // const [randomIPAs, setRandomIPAs] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const handleSubmit = (submission) => {
     // Handle the submission here
     console.log("Submission: ", submission);
   };
 
-  // Conditional rendering: render the component only when randomIPAs has been populated
-  if (randomIPAs.length === 0) {
-    // If randomIPAs is empty, return null or a loading indicator
-    return null; // Or return a loading indicator JSX here
-  }
-
   const character = randomIPAs[0];
 
-  // Shuffle the randomIPAs array
-  for (let i = randomIPAs.length - 1; i >= 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [randomIPAs[i], randomIPAs[j]] = [randomIPAs[j], randomIPAs[i]];
-  }
-
-  const [sound1, sound2, sound3, sound4] = randomIPAs;
+  const [option1, option2, option3, option4] = randomIPAs;
 
   const handleOptionChange = (option) => {
-    setSelectedOption(option); // Update selectedOption when the option is changed
+    setSelectedOption(option); // update selectedOption when the option is changed
   };
 
   return (
@@ -72,6 +46,8 @@ const Quiz = () => {
           flexDirection: "column",
           alignItems: "center",
           marginTop: "8vh",
+          overflow: "auto",
+          paddingBottom: "10vh",
         }}
       >
         <div>
@@ -81,12 +57,12 @@ const Quiz = () => {
         <CharacterBox character={character} />
         <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <SoundButton text={1} audioPath={sound1.audiopath} />
-          <SoundButton text={2} audioPath={sound2.audiopath} />
+          <SoundButton text={1} audioPath={option1.audiopath} />
+          <SoundButton text={2} audioPath={option2.audiopath} />
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <SoundButton text={3} audioPath={sound3.audiopath} />
-          <SoundButton text={4} audioPath={sound4.audiopath} />
+          <SoundButton text={3} audioPath={option3.audiopath} />
+          <SoundButton text={4} audioPath={option4.audiopath} />
         </div>
         <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -94,7 +70,7 @@ const Quiz = () => {
             Select which audio file corresponds to the given IPA symbol:
           </div>
         </div>
-        <SelectionMenu onChange={handleOptionChange} />{" "}
+        <SelectionMenu onChange={handleOptionChange} options={[1, 2, 3, 4]} />{" "}
         <Button onClick={() => handleSubmit(selectedOption)}> Submit </Button>
       </div>
 
