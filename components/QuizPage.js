@@ -83,6 +83,8 @@ const QuizPage = (params) => {
           flexDirection: "column",
           alignItems: "center",
           marginTop: "8vh",
+          overflow: "auto",
+          paddingBottom: "10vh",
         }}
       >
         <div>
