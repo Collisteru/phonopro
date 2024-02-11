@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const Custom404 = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: "white" }}>
       <Header />
       <div
         style={{

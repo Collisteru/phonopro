@@ -10,7 +10,7 @@ const TitlePage = () => {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: "white" }}>
       <div style={{ textAlign: "center", fontSize: "1.5rem" }}>
         <h1>Welcome to</h1>
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -32,11 +32,11 @@ const TitlePage = () => {
 
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
         <Link href="/ipa">
-          <Button>What is IPA?</Button>
+          <Button style={titleButtonStyle}>What is IPA?</Button>
         </Link>
 
         <Link href="/learning">
-          <Button>Learning Mode</Button>
+          <Button style={titleButtonStyle}>Learning Mode</Button>
         </Link>
 
         <Link href="/startquiz">

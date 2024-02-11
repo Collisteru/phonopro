@@ -75,7 +75,7 @@ const QuizPage = (params) => {
   console.log("resetQuiz: ", params.resetQuiz);
 
   return (
-    <div>
+    <div style={{ backgroundColor: "white" }}>
       <Header />
       <div
         style={{
