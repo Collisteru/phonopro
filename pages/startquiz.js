@@ -21,7 +21,13 @@ const StartQuiz = () => {
       >
         <div style={{ textAlign: "center" }}>
           <h1>Quizzing Mode</h1>
-          <div>Welcome to the magnificent IPA quiz!</div>
+          <div>Welcome to the IPA quiz!</div>
+          <br></br>
+          <div>
+            Match the symbol to the phoneme it represents by listening to four
+            phoneme recordings and choosing the correct one.
+          </div>
+          <br></br>
           <Link href="/quizzing">
             <Button> Start Quiz </Button>
           </Link>

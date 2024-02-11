@@ -29,6 +29,7 @@ const ScoreQuiz = () => {
             Good job finishing the quiz! You got {correctCount} out of 10
             correct!
           </div>
+          <br></br>
           <div>
             <Button>
               <Link href="/">Return to Home</Link>
