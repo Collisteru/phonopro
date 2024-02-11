@@ -19,7 +19,7 @@ function CreditsPage() {
           alignContent: "space-evenly",
         }}
       >
-        <div style={{ marginRight: "100px" }}>
+        <div style={{ marginRight: "1em" }}>
           <h1>Sean Carter</h1>
           <Link
             href="https://www.linkedin.com/in/sean-carter-software-engineer/"
@@ -33,7 +33,7 @@ function CreditsPage() {
           </Link>
         </div>
         and
-        <div style={{ marginLeft: "100px" }}>
+        <div style={{ marginLeft: "1em" }}>
           <h1>Jay Lee</h1>
           <Link
             href="https://www.linkedin.com/in/jayleeco/"
