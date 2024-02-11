@@ -1,20 +1,21 @@
 export const IPA = {
-  151: {
+  // missing EL, EM, EN, NX
+  R: {
     symbol: "ɹ",
     name: "voiced alveolar approximant",
     audiopath: "/audio/Alveolar_approximant.ogg.mp3",
   },
-  155: {
+  L: {
     symbol: "l",
     name: "voiced alveolar lateral approximant",
     audiopath: "/audio/Alveolar_lateral_approximant.ogg.mp3",
   },
-  116: {
+  N: {
     symbol: "n",
     name: "voiced alveolar nasal",
     audiopath: "/audio/Alveolar_nasal.ogg.mp3",
   },
-  124: {
+  DX: {
     symbol: "ɾ",
     name: "voiced alveolar tap",
     audiopath: "/audio/Alveolar_tap.ogg.mp3",
@@ -24,7 +25,7 @@ export const IPA = {
     name: "voiced alveolar trill",
     audiopath: "/audio/Alveolar_trill.ogg.mp3",
   },
-  114: {
+  M: {
     symbol: "m",
     name: "voiced bilabial nasal",
     audiopath: "/audio/Bilabial_nasal.ogg.mp3",
@@ -34,7 +35,7 @@ export const IPA = {
     name: "voiced bilabial trill",
     audiopath: "/audio/Bilabial_trill.ogg.mp3",
   },
-  308: {
+  UW: {
     symbol: "u",
     name: "close back rounded vowel",
     audiopath: "/audio/Close_back_rounded_vowel.ogg.mp3",
@@ -44,12 +45,12 @@ export const IPA = {
     name: "close back unrounded vowel",
     audiopath: "/audio/Close_back_unrounded_vowel.ogg.mp3",
   },
-  318: {
+  UX: {
     symbol: "ʉ",
     name: "close central rounded vowel",
     audiopath: "/audio/Close_central_rounded_vowel.ogg.mp3",
   },
-  317: {
+  IX: {
     symbol: "ɨ",
     name: "close central unrounded vowel",
     audiopath: "/audio/Close_central_unrounded_vowel.ogg.mp3",
@@ -59,7 +60,7 @@ export const IPA = {
     name: "close front rounded vowel",
     audiopath: "/audio/Close_front_rounded_vowel.ogg.mp3",
   },
-  301: {
+  IY: {
     symbol: "i",
     name: "close front unrounded vowel",
     audiopath: "/audio/Close_front_unrounded_vowel.ogg.mp3",
@@ -94,7 +95,7 @@ export const IPA = {
     name: "close-mid front unrounded vowel",
     audiopath: "/audio/Close-mid_front_unrounded_vowel.ogg.mp3",
   },
-  113: {
+  Q: {
     symbol: "ʔ",
     name: "glottal stop",
     audiopath: "/audio/Glottal_stop.ogg.mp3",
@@ -109,12 +110,17 @@ export const IPA = {
     name: "voiced labiodental nasal",
     audiopath: "/audio/Labiodental_nasal.ogg.mp3",
   },
-  322: {
+  AX: {
     symbol: "ə",
     name: "mid central vowel",
     audiopath: "/audio/Mid_central_vowel.ogg.mp3",
   },
-  321: {
+  RR: {
+    symbol: "ɚ",
+    name: "rhotic vowel",
+    audiopath: "/audio/EN-us-er.ogg",
+  },
+  UH: {
     symbol: "ʊ",
     name: "near-close near-back rounded vowel",
     audiopath: "/audio/Near-close_near-back_rounded_vowel.ogg.mp3",
@@ -124,7 +130,7 @@ export const IPA = {
     name: "near-close near-front rounded vowel",
     audiopath: "/audio/Near-close_near-front_rounded_vowel.ogg.mp3",
   },
-  319: {
+  IH: {
     symbol: "ɪ",
     name: "near-close near-front unrounded vowel",
     audiopath: "/audio/Near-close_near-front_unrounded_vowel.ogg.mp3",
@@ -134,12 +140,12 @@ export const IPA = {
     name: "near-open central vowel",
     audiopath: "/audio/Near-open_central_unrounded_vowel.ogg.mp3",
   },
-  325: {
+  AE: {
     symbol: "æ",
     name: "near-open front unrounded vowel",
     audiopath: "/audio/Near-open_front_unrounded_vowel.ogg.mp3",
   },
-  313: {
+  AA3: {
     symbol: "ɒ",
     name: "open back rounded vowel",
     audiopath: "/audio/Open-back_rounded_vowel.ogg.mp3",
@@ -154,20 +160,25 @@ export const IPA = {
     name: "open front rounded vowel",
     audiopath: "/audio/Open_front_rounded_vowel.ogg.mp3",
   },
-  304: {
+  AA: {
     symbol: "a",
     name: "open front unrounded vowel",
     audiopath: "/audio/Open_front_unrounded_vowel.ogg.mp3",
   },
-  306: {
+  AO: {
     symbol: "ɔ",
     name: "open-mid back rounded vowel",
     audiopath: "/audio/Open-mid_back_rounded_vowel.ogg.mp3",
   },
-  314: {
+  AH: {
     symbol: "ʌ",
     name: "open-mid back unrounded vowel",
     audiopath: "/audio/Open-mid_back_unrounded_vowel.ogg.mp3",
+  },
+  WH: {
+    symbol: "ʍ",
+    name: "voiceless labial–velar fricative",
+    audiopath: "/audio/Voiceless_labio-velar_fricative.ogg",
   },
   395: {
     symbol: "ɞ",
@@ -184,12 +195,12 @@ export const IPA = {
     name: "open-mid front rounded vowel",
     audiopath: "/audio/Open-mid_front_rounded_vowel.ogg.mp3",
   },
-  303: {
+  EH: {
     symbol: "ɛ",
     name: "open-mid front unrounded vowel",
     audiopath: "/audio/Open-mid_front_unrounded_vowel.ogg.mp3",
   },
-  153: {
+  Y: {
     symbol: "j",
     name: "voiced palatal approximant",
     audiopath: "/audio/Palatal_approximant.ogg.mp3",
@@ -239,7 +250,7 @@ export const IPA = {
     name: "voiced velar lateral approximant",
     audiopath: "/audio/Velar_lateral_approximant.ogg.mp3",
   },
-  119: {
+  NG: {
     symbol: "ŋ",
     name: "voiced velar nasal",
     audiopath: "/audio/Velar_nasal.ogg.mp3",
@@ -249,12 +260,12 @@ export const IPA = {
     name: "voiced alveolar lateral fricatives",
     audiopath: "/audio/Voiced_alveolar_lateral_fricative.ogg.mp3",
   },
-  104: {
+  D: {
     symbol: "d",
     name: "voiced alveolar plosive",
     audiopath: "/audio/Voiced_alveolar_plosive.ogg.mp3",
   },
-  133: {
+  Z: {
     symbol: "z",
     name: "voiced alveolar sibilant",
     audiopath: "/audio/Voiced_alveolar_sibilant.ogg.mp3",
@@ -264,12 +275,12 @@ export const IPA = {
     name: "voiced bilabial fricative",
     audiopath: "/audio/Voiced_bilabial_fricative.ogg.mp3",
   },
-  102: {
+  B: {
     symbol: "b",
     name: "voiced bilabial plosive",
     audiopath: "/audio/Voiced_bilabial_plosive.ogg.mp3",
   },
-  131: {
+  DH: {
     symbol: "ð",
     name: "voiced dental fricative",
     audiopath: "/audio/Voiced_dental_fricative.ogg.mp3",
@@ -279,10 +290,20 @@ export const IPA = {
     name: "voiced glottal fricative",
     audiopath: "/audio/Voiced_glottal_fricative.ogg.mp3",
   },
-  129: {
+  V: {
     symbol: "v",
     name: "voiced labiodental fricative",
     audiopath: "/audio/Voiced_labiodental_fricative.ogg.mp3",
+  },
+  W: {
+    symbol: "w",
+    name: "voiced labial–velar approximant",
+    audiopath: "/audio/Voiced_labio-velar_approximant.ogg",
+  },
+  JH: {
+    symbol: "dʒ",
+    name: "voiced palato-alveolar affricate",
+    audiopath: "/audio/Voiced_palato-alveolar_affricate.ogg",
   },
   139: {
     symbol: "ʝ",
@@ -294,8 +315,8 @@ export const IPA = {
     name: "voiced palatal plosive",
     audiopath: "/audio/Voiced_palatal_plosive.ogg.mp3",
   },
-  183: {
-    symbol: "ʑ",
+  ZH: {
+    symbol: "ʒ",
     name: "voiced alveolo-palatal sibilant fricative",
     audiopath: "/audio/Voiced_palato-alveolar_sibilant.ogg.mp3",
   },
@@ -309,12 +330,12 @@ export const IPA = {
     name: "voiceless alveolar lateral fricative",
     audiopath: "/audio/Voiceless_alveolar_lateral_fricative.ogg.mp3",
   },
-  103: {
+  T: {
     symbol: "t",
     name: "voiceless alveolar plosive",
     audiopath: "/audio/Voiceless_alveolar_plosive.ogg.mp3",
   },
-  132: {
+  S: {
     symbol: "s",
     name: "voiceless alveolar sibilant",
     audiopath: "/audio/Voiceless_alveolar_sibilant.ogg.mp3",
@@ -324,22 +345,22 @@ export const IPA = {
     name: "voiceless bilabial fricative",
     audiopath: "/audio/Voiceless_bilabial_fricative.ogg.mp3",
   },
-  101: {
+  P: {
     symbol: "p",
     name: "voiceless bilabial plosive",
     audiopath: "/audio/Voiceless_bilabial_plosive.ogg.mp3",
   },
-  130: {
+  TH: {
     symbol: "θ",
     name: "voiceless dental fricative",
     audiopath: "/audio/Voiceless_dental_fricative.ogg.mp3",
   },
-  146: {
+  H: {
     symbol: "h",
     name: "voiceless glottal fricative",
     audiopath: "/audio/Voiceless_glottal_fricative.ogg.mp3",
   },
-  128: {
+  F: {
     symbol: "f",
     name: "voiceless labiodental fricative",
     audiopath: "/audio/Voiceless_labiodental_fricative.ogg.mp3",
@@ -355,10 +376,16 @@ export const IPA = {
     audiopath: "/audio/Voiceless_palatal_plosive.ogg.mp3",
   },
   182: {
-    symbol: "ɕ",
-    name: "voiceless alveolo-palatal sibilant fricative",
+    symbol: "ʃ",
+    name: "voiceless postalveolar fricative",
     audiopath: "/audio/Voiceless_palato-alveolar_sibilant.ogg.mp3",
   },
+  CH: {
+    symbol: "tʃ",
+    name: "voiceless palato-alveolar affricate",
+    audiopath: "/audio/Voiceless_palato-alveolar_affricate.ogg",
+  },
+
   144: {
     symbol: "ħ",
     name: "voiceless pharyngeal fricative",
@@ -389,7 +416,7 @@ export const IPA = {
     name: "voiceless velar fricative",
     audiopath: "/audio/Voiceless_velar_fricative.ogg.mp3",
   },
-  109: {
+  K: {
     symbol: "k",
     name: "voiceless velar plosive",
     audiopath: "/audio/Voiceless_velar_plosive.ogg.mp3",
