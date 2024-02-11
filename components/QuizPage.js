@@ -9,7 +9,7 @@ const { IPA } = require("../constants.js");
 import SelectionMenu from "../components/SelectionMenu";
 import SoundButton from "../components/SoundButton";
 import CharacterBox from "../components/CharacterBox";
-import Counter from "../components/counter";
+import Counter from "../components/Counter";
 
 const QuizPage = (params) => {
   const [randomIPAs, setRandomIPAs] = useState([]);
@@ -91,17 +91,15 @@ const QuizPage = (params) => {
           }}
         >
           <Counter
-            label={"Question"}
+            label={"Round"}
             numerator={params.quizIndex}
             denominator={10}
-            style={{ color: "black", alignContent: "center" }}
-          ></Counter>
+          />
           <CharacterBox character={character} />
           <Counter
             label={"Correct Answers"}
             numerator={params.correctCount}
             denominator={10}
-            style={{ color: "green" }}
           ></Counter>
         </div>
         <br></br>

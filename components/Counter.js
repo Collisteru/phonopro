@@ -1,4 +1,8 @@
-const Counter = ({ label, numerator, denominator, style }) => {
+import React from "react";
+
+import style from "../styles/CharacterBox.module.css";
+
+const Counter = ({ label, numerator, denominator }) => {
   return (
     <div>
       <div>{label}:</div>
@@ -8,3 +12,5 @@ const Counter = ({ label, numerator, denominator, style }) => {
     </div>
   );
 };
+
+export default Counter;
