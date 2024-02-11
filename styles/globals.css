@@ -9,6 +9,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: serif;
+  background-color: #ffffff; /* Set background color to white */
 }
 
 * {
