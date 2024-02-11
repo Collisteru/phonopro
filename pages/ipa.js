@@ -71,12 +71,13 @@ function IPA() {
           to give you an opportunity to practice memorizing the letterforms,
           which can be strange and unintuitive, and connect them with the
           phonemes they correspond to. In Learning Mode, you can look at a list
-          of all the characters and see what they look and sound like. In
-          Quizzing Mode, you can quiz yourself on this knowledge by looking at
-          random letterforms and choosing which phoneme they correspond to. This
-          simple flashcard method, which is based on the well-known method of
-          spaced repetition, makes it easy to absorb the meaning of the letters.
-          With PhonoPro, you'll be proficient in IPA in no time!
+          of all the characters and see what they look and sound like. You can
+          also type in English text to see its transcription in IPA. In Quizzing
+          Mode, you can quiz yourself on this knowledge by looking at random
+          letterforms and choosing which phoneme they correspond to. This simple
+          flashcard method, which is based on the well-known method of spaced
+          repetition, makes it easy to absorb the meaning of the letters. With
+          PhonoPro, you'll be proficient in IPA in no time!
         </p>
         <br></br>
       </div>
