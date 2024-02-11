@@ -1,6 +1,3 @@
-# This python file reformatted the entire CMU pronounciation dictionary (CMUPD) into a json File
-# CMUPD is infile.txt in same directory
-
 # Open the file in read mode
 with open("infile.txt", "r") as file:
     with open("outfile.json", "w") as outfile:
@@ -10,7 +7,9 @@ with open("infile.txt", "r") as file:
             new_words = []
             # Split the line into words
             words = line.split()
-            key = words[0]
+            key = (
+                words[0].replace("'", "").replace(".", "")
+            )  # remove apostrophes and periods
 
             # Process each word
             for i, word in enumerate(words):
