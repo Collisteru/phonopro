@@ -9,7 +9,6 @@ const { IPA } = require("../constants.js");
 import SelectionMenu from "../components/SelectionMenu";
 import SoundButton from "../components/SoundButton";
 import CharacterBox from "../components/CharacterBox";
-import Counter from "../components/counter";
 
 const QuizPage = (params) => {
   const [randomIPAs, setRandomIPAs] = useState([]);
@@ -83,27 +82,7 @@ const QuizPage = (params) => {
           Press each of the numbered buttons to play the corresponding audio.
         </div>
         <br></br>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            gap: "20px", // Add margin-top for spacing
-          }}
-        >
-          <Counter
-            label={"Question"}
-            numerator={params.quizIndex}
-            denominator={10}
-            style={{ color: "black", alignContent: "center" }}
-          ></Counter>
-          <CharacterBox character={character} />
-          <Counter
-            label={"Correct Answers"}
-            numerator={params.correctCount}
-            denominator={10}
-            style={{ color: "green" }}
-          ></Counter>
-        </div>
+        <CharacterBox character={character} />
         <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <SoundButton text={1} audioPath={sound1.audiopath} />
@@ -127,6 +106,7 @@ const QuizPage = (params) => {
           Submit{" "}
         </Button>
       </div>
+
       <Footer />
     </div>
   );
