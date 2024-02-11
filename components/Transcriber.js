@@ -63,7 +63,9 @@ const Transcriber = () => {
               />
             ))
           ) : (
-            <span>Nothing to transcript!</span>
+            <span style={{ color: "red" }}>
+              Type a sentence and click on the characters!
+            </span>
           )}
         </p>
       </div>
