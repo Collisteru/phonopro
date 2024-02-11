@@ -26,7 +26,7 @@ const TitlePage = () => {
       >
         <p>
           An Educational Project at Blasterhacks 2024 By{" "}
-          <strong>Jun Lee and Sean Carter</strong>
+          <strong>Jay Lee and Sean Carter</strong>
         </p>
       </div>
 
