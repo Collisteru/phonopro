@@ -10,7 +10,7 @@ const SoundButton = ({ text, audioPath }) => {
 
   return (
     <button
-      className="border border-black bg-white text-black font-bold py-5 px-6 px-4"
+      className="border border-black bg-white text-black font-bold py-5 px-6 px-4 ml-4 mr-4"
       onClick={playSound}
     >
       {" "}

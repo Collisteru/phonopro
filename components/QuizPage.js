@@ -109,27 +109,26 @@ const QuizPage = (params) => {
           ></Counter>
         </div>
         <br></br>
+        <div>Select which audio file corresponds to the given IPA symbol:</div>
+        <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <SoundButton text={1} audioPath={sound1.audiopath} />
           <SoundButton text={2} audioPath={sound2.audiopath} />
-        </div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
           <SoundButton text={3} audioPath={sound3.audiopath} />
           <SoundButton text={4} audioPath={sound4.audiopath} />
         </div>
         <br></br>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <div>
-            Select which audio file corresponds to the given IPA symbol:
-          </div>
+        <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+          <SelectionMenu onChange={handleOptionChange} options={[1, 2, 3, 4]} />
+
+          <Button
+            className="ml-8"
+            onClick={() => params.handleAnswer(selectedOption, correctIndex)}
+          >
+            {" "}
+            Submit{" "}
+          </Button>
         </div>
-        <SelectionMenu onChange={handleOptionChange} options={[1, 2, 3, 4]} />{" "}
-        <Button
-          onClick={() => params.handleAnswer(selectedOption, correctIndex)}
-        >
-          {" "}
-          Submit{" "}
-        </Button>
       </div>
       <Footer />
     </div>
