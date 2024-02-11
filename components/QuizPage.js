@@ -5,13 +5,13 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import { useState, useEffect } from "react";
 const { IPA } = require("../constants.js");
-import getRandomIPA from "@components/RandomIPA";
 
 import SelectionMenu from "../components/SelectionMenu";
 import SoundButton from "../components/SoundButton";
 import CharacterBox from "../components/CharacterBox";
+import Counter from "../components/Counter";
 
-const Quiz = () => {
+const QuizPage = (params) => {
   const [randomIPAs, setRandomIPAs] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null); // Add selectedOption state variable
   const [correctIndex, setCorrectIndex] = useState(null); // Declare correctIndex state variable
@@ -45,17 +45,9 @@ const Quiz = () => {
 
     const { RandomIPAs, correctIndex } = getRandomIPA();
 
-    console.log("CorrectIndex: ", correctIndex);
     setRandomIPAs(RandomIPAs);
     setCorrectIndex(correctIndex); // Update correctIndex state variable
   }, []);
-
-  console.log("RandomIPAs: ", randomIPAs);
-
-  const handleSubmit = () => {
-    // Handle the submission here
-    console.log("Submission: ", selectedOption);
-  };
 
   // Conditional rendering: render the component only when randomIPAs has been populated
   if (randomIPAs.length === 0) {
@@ -67,9 +59,20 @@ const Quiz = () => {
 
   const [sound1, sound2, sound3, sound4] = randomIPAs;
 
+  console.log("Sounds: ");
+  console.log(sound1);
+  console.log(sound2);
+  console.log(sound3);
+  console.log(sound4);
+
   const handleOptionChange = (option) => {
     setSelectedOption(option); // update selectedOption when the option is changed
   };
+
+  console.log("Correct_count: ", params.correctCount);
+  console.log("Quiz_index: ", params.quizIndex);
+  console.log("handleAnswer: ", params.handleAnswer);
+  console.log("resetQuiz: ", params.resetQuiz);
 
   return (
     <div>
@@ -86,7 +89,25 @@ const Quiz = () => {
           Press each of the numbered buttons to play the corresponding audio.
         </div>
         <br></br>
-        <CharacterBox character={character} />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-evenly",
+            gap: "20px", // Add margin-top for spacing
+          }}
+        >
+          <Counter
+            label={"Round"}
+            numerator={params.quizIndex}
+            denominator={10}
+          />
+          <CharacterBox character={character} />
+          <Counter
+            label={"Correct Answers"}
+            numerator={params.correctCount}
+            denominator={10}
+          ></Counter>
+        </div>
         <br></br>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <SoundButton text={1} audioPath={sound1.audiopath} />
@@ -103,12 +124,16 @@ const Quiz = () => {
           </div>
         </div>
         <SelectionMenu onChange={handleOptionChange} options={[1, 2, 3, 4]} />{" "}
-        <Button onClick={() => handleSubmit(selectedOption)}> Submit </Button>
+        <Button
+          onClick={() => params.handleAnswer(selectedOption, correctIndex)}
+        >
+          {" "}
+          Submit{" "}
+        </Button>
       </div>
-
       <Footer />
     </div>
   );
 };
 
-export default Quiz;
+export default QuizPage;

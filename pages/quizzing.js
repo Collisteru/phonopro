@@ -1,33 +1,48 @@
-// pages/quizzing.js
+import QuizPage from "../components/QuizPage";
+import Router from "next/router";
+import { useState, useEffect } from "react";
 
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import Button from "@components/Button";
-import Link from "next/link";
+export default function Quizzing() {
+  const [correctCount, setCorrectCount] = useState(0);
+  const [quizIndex, setQuizIndex] = useState(0);
+  const totalQuizzes = 10;
 
-const QuizzingPage = () => {
+  const resetQuiz = () => {
+    setCorrectCount(0);
+    setQuizIndex(0);
+  };
+
+  const handleAnswer = (selectedOption, correctIndex) => {
+    // Handle the submission here
+    console.log("selectedOption: ", selectedOption);
+    console.log("correctIndex: ", correctIndex);
+    if (selectedOption == correctIndex + 1) {
+      // Increment the correct_count if the selected option is correct
+      setCorrectCount((prevCount) => prevCount + 1);
+      console.log("Correct!");
+    }
+    // Increment the quiz_index to move to the next question
+
+    if (quizIndex >= totalQuizzes) {
+      // Redirect to the score page if the quiz is finished
+      Router.push({
+        pathname: "/scorequiz",
+        query: { correctCount: correctCount },
+      });
+    }
+    setQuizIndex((prevIndex) => prevIndex + 1);
+  };
+
+  // Generate a new key whenever quizIndex changes to force re-rendering of QuizPage
+  const quizPageKey = `quizPage-${quizIndex}`;
+
   return (
-    <div>
-      <Header />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginTop: "25vh",
-        }}
-      >
-        <div style={{ textAlign: "center" }}>
-          <h1>Quizzing Mode</h1>
-          <div>Welcome to the magnificent IPA quiz!</div>
-          <Link href="/quiz">
-            <Button> Start Quiz </Button>
-          </Link>
-        </div>
-      </div>
-      <Footer />
-    </div>
+    <QuizPage
+      key={quizPageKey}
+      correctCount={correctCount}
+      quizIndex={quizIndex}
+      handleAnswer={handleAnswer}
+      resetQuiz={resetQuiz}
+    />
   );
-};
-
-export default QuizzingPage;
+}
