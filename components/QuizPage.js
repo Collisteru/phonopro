@@ -59,6 +59,12 @@ const QuizPage = (params) => {
 
   const [sound1, sound2, sound3, sound4] = randomIPAs;
 
+  console.log("Sounds: ");
+  console.log(sound1);
+  console.log(sound2);
+  console.log(sound3);
+  console.log(sound4);
+
   const handleOptionChange = (option) => {
     setSelectedOption(option); // update selectedOption when the option is changed
   };

@@ -102,7 +102,7 @@ export const IPA = {
   150: {
     symbol: "ʋ",
     name: "voiced labiodental approximant",
-    audiopath: "/audio/Labiodental_approximant.mp3",
+    audiopath: "/audio/Voiced_labiodental_approximant.ogg",
   },
   115: {
     symbol: "ɱ",
@@ -142,7 +142,7 @@ export const IPA = {
   313: {
     symbol: "ɒ",
     name: "open back rounded vowel",
-    audiopath: "/audio/Open-back_rounded_vowel.ogg.mp3",
+    audiopath: "/audio/Open_back_rounded_vowel.ogg.mp3",
   },
   305: {
     symbol: "ɑ",
@@ -222,7 +222,7 @@ export const IPA = {
   117: {
     symbol: "ɳ",
     name: "voiced retroflex nasal",
-    audiopath: "/audio/Retroflex_nasal.ogg.mp3",
+    audiopath: "/audio/Retroflex_nasal.ogg",
   },
   120: {
     symbol: "ɴ",
