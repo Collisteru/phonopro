@@ -29,7 +29,7 @@ const SingingText = ({ text, audioPath }) => {
           {text}
         </span>
       ) : text ? (
-        <span style={{ fontSize: "50px" }}>
+        <span style={{ fontSize: "35px" }}>
           {"["}
           {text}
           {"] "}

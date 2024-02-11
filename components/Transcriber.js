@@ -27,10 +27,14 @@ const Transcriber = () => {
       if (words.length > 0) {
         words.forEach((word) => {
           const phonetics = CMU_DICT[word];
-          phonetics.forEach((phonetic) => {
-            sentence.push(IPA[phonetic]);
-          });
-          sentence.push(null);
+          if (phonetics) {
+            phonetics.forEach((phonetic) => {
+              sentence.push(IPA[phonetic]);
+            });
+            sentence.push(null);
+          } else {
+            sentence.push({ symbol: word });
+          }
         });
       }
       setResult(sentence);
