@@ -24,7 +24,6 @@ const Transcriber = () => {
         .split(" ");
       const sentence = [];
 
-      console.log("words", words);
       if (words.length > 0) {
         words.forEach((word) => {
           const phonetics = CMU_DICT[word];
@@ -51,7 +50,6 @@ const Transcriber = () => {
       <div>
         <h2>Transcription:</h2>
         <p>
-          {console.log("result", result)}
           {result.length > 0 ? (
             result.map((item, index) => (
               <SingingText
