@@ -1,4 +1,5 @@
 import QuizPage from "../components/QuizPage";
+import Router from "next/router";
 import { useState, useEffect } from "react";
 
 export default function Quizzing() {
@@ -21,6 +22,14 @@ export default function Quizzing() {
       console.log("Correct!");
     }
     // Increment the quiz_index to move to the next question
+
+    if (quizIndex >= totalQuizzes) {
+      // Redirect to the score page if the quiz is finished
+      Router.push({
+        pathname: "/scorequiz",
+        query: { correctCount: correctCount },
+      });
+    }
     setQuizIndex((prevIndex) => prevIndex + 1);
   };
 
