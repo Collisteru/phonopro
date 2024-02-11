@@ -19,13 +19,17 @@ const SingingText = ({ text, audioPath }) => {
     <>
       {text && audioPath ? (
         <span
-          style={{ color: clicked ? "red" : "black", cursor: "pointer" }}
+          style={{
+            color: clicked ? "red" : "black",
+            cursor: "pointer",
+            fontSize: "50px",
+          }}
           onClick={handleClick}
         >
           {text}
         </span>
       ) : (
-        <span>{"\t"}</span>
+        <span style={{ fontSize: "50px" }}>{"\t"}</span>
       )}
     </>
   );
