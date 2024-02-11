@@ -10,7 +10,7 @@ const TitlePage = () => {
   };
 
   return (
-    <>
+    <div style={{ backgroundColor: "white" }}>
       <div style={{ textAlign: "center", fontSize: "1.5rem" }}>
         <h1>Welcome to</h1>
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -36,7 +36,7 @@ const TitlePage = () => {
         </Link>
 
         <Link href="/learning">
-          <Button>Learning Mode</Button>
+          <Button style={titleButtonStyle}>Learning Mode</Button>
         </Link>
 
         <Link href="/startquiz">
@@ -47,7 +47,7 @@ const TitlePage = () => {
           <Button style={titleButtonStyle}>Credits</Button>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 

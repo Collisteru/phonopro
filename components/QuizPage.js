@@ -75,7 +75,7 @@ const QuizPage = (params) => {
   console.log("resetQuiz: ", params.resetQuiz);
 
   return (
-    <div>
+    <div style={{ backgroundColor: "white" }}>
       <Header />
       <div
         style={{
@@ -83,6 +83,8 @@ const QuizPage = (params) => {
           flexDirection: "column",
           alignItems: "center",
           marginTop: "8vh",
+          overflow: "auto",
+          paddingBottom: "10vh",
         }}
       >
         <div>

@@ -18,7 +18,13 @@ function IPA() {
   };
 
   return (
-    <div style={{ textAlign: "center", fontSize: "1.5rem" }}>
+    <div
+      style={{
+        backgroundColor: "white",
+        textAlign: "center",
+        fontSize: "1.5rem",
+      }}
+    >
       <Header />
       <h1 style={{ fontSize: "3rem" }}>What is IPA?</h1>
       <div style={columnStyle}>
