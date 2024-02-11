@@ -2,7 +2,6 @@ import React from "react";
 
 import Header from "@components/Header";
 import Footer from "@components/Footer";
-import Button from "@components/Button";
 
 import Link from "next/link";
 
@@ -51,6 +50,9 @@ function CreditsPage() {
           </Link>
         </div>
       </div>
+      <br></br>
+      <h1>Thanks to:</h1>
+      <li>The CMU Pronouncing Dictionary</li>
       <br></br>
       <h1>In 36 hours at Blasterhacks 2024</h1>
       <Footer />
