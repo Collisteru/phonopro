@@ -45,10 +45,11 @@ const LearningPage = () => {
             options={["Random", "Character", "Writing"]}
           />
           {selectedOption == "Random" && (
-            <>
+            <div>
               <AlphabetLetter letter={getRandomIPA()} />
+
               <Button onClick={handleMoreClick}>More!</Button>
-            </>
+            </div>
           )}
           {selectedOption == "Character" && <AlphabetChoice />}
           {selectedOption == "Writing" && <Transcriber />}
