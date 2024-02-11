@@ -1,5 +1,5 @@
 import SingingText from "./SingingText";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const { IPA } = require("../constants.js");
 const { CMU_DICT } = require("../constants.js");
@@ -47,6 +47,7 @@ const Transcriber = () => {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <input
