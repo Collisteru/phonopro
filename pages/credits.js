@@ -7,7 +7,15 @@ import Link from "next/link";
 
 function CreditsPage() {
   return (
-    <div style={{ textAlign: "center", fontSize: "1.5rem" }}>
+    <div
+      style={{
+        backgroundColor: "white",
+        textAlign: "center",
+        fontSize: "1.5rem",
+        overflow: "auto",
+        paddingBottom: "10vh",
+      }}
+    >
       <Header />
       <h1 style={{ fontSize: "5rem" }}>Credits</h1>
       <h1>Developed By:</h1>

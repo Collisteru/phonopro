@@ -14,7 +14,7 @@ const ScoreQuiz = () => {
   // Get correctCount from the query object
   const correctCount = router.query.correctCount;
   return (
-    <div>
+    <div style={{ backgroundColor: "white" }}>
       <Header />
       <div
         style={{

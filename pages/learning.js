@@ -25,7 +25,7 @@ const LearningPage = () => {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: "white" }}>
       <Header />
       <div
         style={{

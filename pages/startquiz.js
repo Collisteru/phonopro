@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const StartQuiz = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: "white" }}>
       <Header />
 
       <div
