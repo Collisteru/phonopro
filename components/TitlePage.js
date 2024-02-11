@@ -40,6 +40,10 @@ const TitlePage = () => {
         <Link href="/startquiz">
           <Button style={titleButtonStyle}>Quizzing Mode</Button>
         </Link>
+
+        <Link href="/credits">
+          <Button style={titleButtonStyle}>Credits</Button>
+        </Link>
       </div>
     </div>
   );
