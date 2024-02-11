@@ -7,6 +7,7 @@ import AlphabetChoice from "@components/AlphabetChoice";
 import AlphabetLetter from "@components/AlphabetLetter";
 import getRandomIPA from "@components/RandomIPA";
 import Button from "@components/Button";
+import Transcriber from "@components/Transcriber";
 import { useState } from "react";
 
 const LearningPage = () => {
@@ -41,7 +42,7 @@ const LearningPage = () => {
           <p>Practice by: </p>
           <SelectionMenu
             onChange={handleOptionChange}
-            options={["Random", "Character"]}
+            options={["Random", "Character", "Reading"]}
           />
           {selectedOption == "Random" && (
             <>
@@ -50,6 +51,7 @@ const LearningPage = () => {
             </>
           )}
           {selectedOption == "Character" && <AlphabetChoice />}
+          {selectedOption == "Reading" && <Transcriber />}
         </div>
       </div>
       <Footer />
