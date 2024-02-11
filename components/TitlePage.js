@@ -31,11 +31,13 @@ const TitlePage = () => {
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <div style={{ marginRight: "10px" }}>
-          <Link href="/learning">
-            <Button>Learning Mode</Button>
-          </Link>
-        </div>
+        <Link href="/ipa">
+          <Button>What is IPA?</Button>
+        </Link>
+
+        <Link href="/learning">
+          <Button>Learning Mode</Button>
+        </Link>
 
         <Link href="/startquiz">
           <Button style={titleButtonStyle}>Quizzing Mode</Button>
