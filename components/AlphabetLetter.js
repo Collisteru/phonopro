@@ -3,12 +3,16 @@ import CharacterBox from "./CharacterBox";
 
 const AlphabetLetter = ({ letter }) => {
   return (
-    <div>
-      <p>{letter.name}</p>
-      <SoundButton
-        text={<CharacterBox character={letter} />}
-        audioPath={letter.audiopath}
-      />
+    <div
+      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
+    >
+      <div style={{ padding: "20px" }}>
+        <p>{letter.name}</p>
+        <SoundButton
+          text={<CharacterBox character={letter} />}
+          audioPath={letter.audiopath}
+        />
+      </div>
     </div>
   );
 };
