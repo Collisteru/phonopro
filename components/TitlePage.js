@@ -25,7 +25,7 @@ const TitlePage = () => {
         style={{ textAlign: "center", fontSize: "2rem", marginBottom: "5rem" }}
       >
         <p>
-          An Educational Project at Blasterhacks 2024 By{" "}
+          An Linguistics Education Project at BlasterHacks 2024 By{" "}
           <strong>Jay Lee and Sean Carter</strong>
         </p>
       </div>
