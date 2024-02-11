@@ -4,9 +4,9 @@ import Link from "next/link";
 import Button from "./Button";
 
 const TitlePage = () => {
-  const handleClick = () => {
-    // Add your logic here
-    console.log("Button clicked");
+  const titleButtonStyle = {
+    marginLeft: "10px",
+    marginRight: "10px",
   };
 
   return (
@@ -25,16 +25,20 @@ const TitlePage = () => {
         style={{ textAlign: "center", fontSize: "2rem", marginBottom: "5rem" }}
       >
         <p>
-          An Educational Project for Blasterhacks 2024 By{" "}
+          An Educational Project at Blasterhacks 2024 By{" "}
           <strong>Jun Lee and Sean Carter</strong>
         </p>
       </div>
+
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <Link href="/learning">
-          <Button>Learning Mode</Button>
-        </Link>
+        <div style={{ marginRight: "10px" }}>
+          <Link href="/learning">
+            <Button>Learning Mode</Button>
+          </Link>
+        </div>
+
         <Link href="/startquiz">
-          <Button>Quizzing Mode</Button>
+          <Button style={titleButtonStyle}>Quizzing Mode</Button>
         </Link>
       </div>
     </div>
