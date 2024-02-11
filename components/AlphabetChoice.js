@@ -25,7 +25,7 @@ const AlphabetChoice = () => {
   }, [character]);
 
   return (
-    <div>
+    <div style={{ padding: "15px" }}>
       <SelectionMenu
         onChange={handleParameterChange}
         options={["Symbol", "Name"]}
@@ -38,7 +38,7 @@ const AlphabetChoice = () => {
           )}
         />
       )}
-      <div>
+      <div style={{ paddingTop: "20px" }}>
         {alphabet !== null && (
           <SoundButton
             text={<CharacterBox character={alphabet} />}

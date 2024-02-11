@@ -42,16 +42,17 @@ const LearningPage = () => {
           <p>Practice by: </p>
           <SelectionMenu
             onChange={handleOptionChange}
-            options={["Random", "Character", "Writing"]}
+            options={["Random", "Character", "Reading"]}
           />
           {selectedOption == "Random" && (
-            <>
+            <div>
               <AlphabetLetter letter={getRandomIPA()} />
+
               <Button onClick={handleMoreClick}>More!</Button>
-            </>
+            </div>
           )}
           {selectedOption == "Character" && <AlphabetChoice />}
-          {selectedOption == "Writing" && <Transcriber />}
+          {selectedOption == "Reading" && <Transcriber />}
         </div>
       </div>
       <Footer />
