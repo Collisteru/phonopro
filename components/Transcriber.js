@@ -38,16 +38,16 @@ const Transcriber = () => {
   };
 
   return (
-    <div>
-      <h2>Write your sentence in IPA, and then check it!</h2>
+    <div style={{ paddingTop: "40px" }}>
       <input
         type="text"
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
+        className="border border-black bg-white text-black font-bold py-2 px-4"
         placeholder="Enter text here"
       />
       <Button onClick={handleSubmit}>Submit</Button>
-      <div>
+      <div style={{ paddingTop: "40px" }}>
         <h2>Transcription:</h2>
         <p>
           {result.length > 0 ? (
