@@ -12,6 +12,8 @@ function CreditsPage() {
         backgroundColor: "white",
         textAlign: "center",
         fontSize: "1.5rem",
+        overflow: "auto",
+        paddingBottom: "10vh",
       }}
     >
       <Header />

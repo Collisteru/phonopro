@@ -4,8 +4,6 @@ import Head from "next/head";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Button from "../components/Button";
-import Link from "next/link";
 
 const Custom404 = () => {
   return (
@@ -17,6 +15,8 @@ const Custom404 = () => {
           flexDirection: "column",
           alignItems: "center",
           marginTop: "25vh",
+          overflow: "auto",
+          paddingBottom: "10vh",
         }}
       >
         <div style={{ textAlign: "center" }}>
