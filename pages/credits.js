@@ -27,7 +27,7 @@ function CreditsPage() {
           alignContent: "space-evenly",
         }}
       >
-        <div style={{ marginRight: "100px" }}>
+        <div style={{ marginRight: "1em" }}>
           <h1>Sean Carter</h1>
           <Link
             href="https://www.linkedin.com/in/sean-carter-software-engineer/"
@@ -41,7 +41,7 @@ function CreditsPage() {
           </Link>
         </div>
         and
-        <div style={{ marginLeft: "100px" }}>
+        <div style={{ marginLeft: "1em" }}>
           <h1>Jay Lee</h1>
           <Link
             href="https://www.linkedin.com/in/jayleeco/"
@@ -59,10 +59,10 @@ function CreditsPage() {
         </div>
       </div>
       <br></br>
+      <h1>In 36 hours at Blasterhacks 2024</h1>
       <h1>Thanks to:</h1>
       <li>The CMU Pronouncing Dictionary</li>
-      <br></br>
-      <h1>In 36 hours at Blasterhacks 2024</h1>
+      <li>The Wikimedia Project</li>
       <Footer />
     </div>
   );

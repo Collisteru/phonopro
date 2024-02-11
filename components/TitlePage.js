@@ -25,14 +25,14 @@ const TitlePage = () => {
         style={{ textAlign: "center", fontSize: "2rem", marginBottom: "5rem" }}
       >
         <p>
-          An Educational Project at Blasterhacks 2024 By{" "}
+          An Linguistics Education Project at BlasterHacks 2024 By{" "}
           <strong>Jay Lee and Sean Carter</strong>
         </p>
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
         <Link href="/ipa">
-          <Button style={titleButtonStyle}>What is IPA?</Button>
+          <Button style={{ height: "4rem;" }}>What is IPA?</Button>
         </Link>
 
         <Link href="/learning">

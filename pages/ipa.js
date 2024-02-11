@@ -4,9 +4,19 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import Button from "@components/Button";
 
+import { isMobile } from "react-device-detect";
+
 import Link from "next/link";
 
 function IPA() {
+  // Define columnStyle outside of conditional statements
+
+  const columnStyle = {
+    marginLeft: "25%",
+    marginRight: "25%",
+    textAlign: "justify",
+  };
+
   return (
     <div
       style={{
@@ -17,13 +27,7 @@ function IPA() {
     >
       <Header />
       <h1 style={{ fontSize: "3rem" }}>What is IPA?</h1>
-      <div
-        style={{
-          marginLeft: "400px",
-          marginRight: "400px",
-          textAlign: "justify",
-        }}
-      >
+      <div style={columnStyle}>
         <p>
           In theory, each letter in an alphabet is supposed to correspond with a
           sound in the language it represents. In real life, this often isn't
