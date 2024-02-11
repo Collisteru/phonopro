@@ -63,6 +63,8 @@ function CreditsPage() {
       <h1>Thanks to:</h1>
       <li>The CMU Pronouncing Dictionary</li>
       <li>The Wikimedia Project</li>
+      <li>ChatGPT</li>
+      <li>GitHub CoPilot</li>
       <Footer />
     </div>
   );
