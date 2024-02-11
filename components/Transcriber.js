@@ -1,4 +1,3 @@
-import Button from "./Button";
 import SingingText from "./SingingText";
 import { useState, useEffect } from "react";
 
@@ -43,14 +42,27 @@ const Transcriber = () => {
 
   return (
     <div style={{ paddingTop: "40px" }}>
-      <input
-        type="text"
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-        className="border border-black bg-white text-black font-bold py-2 px-4"
-        placeholder="Enter text here"
-      />
-      <Button onClick={handleSubmit}>Submit</Button>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
+        <input
+          type="text"
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          className="border border-black bg-white text-black font-bold py-2 px-4"
+          placeholder="Enter text here"
+        />
+        <button
+          className={`border border-black bg-white text-black font-bold py-2 px-4`}
+          onClick={handleSubmit}
+        >
+          Submit
+        </button>
+      </div>
       <div style={{ paddingTop: "40px" }}>
         <h2>Transcription:</h2>
         <p>
