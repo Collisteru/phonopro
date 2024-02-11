@@ -9,19 +9,25 @@ const SingingText = ({ text, audioPath }) => {
     const audio = new Audio(audioPath);
     audio.play();
 
-    // automatically reset after 2 secs
+    // automatically reset after 1 sec
     setTimeout(() => {
       setClicked(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (
-    <p
-      style={{ color: clicked ? "red" : "black", cursor: "pointer" }}
-      onClick={handleClick}
-    >
-      {text}
-    </p>
+    <>
+      {text && audioPath ? (
+        <span
+          style={{ color: clicked ? "red" : "black", cursor: "pointer" }}
+          onClick={handleClick}
+        >
+          {text}
+        </span>
+      ) : (
+        <span>{"\t"}</span>
+      )}
+    </>
   );
 };
 
